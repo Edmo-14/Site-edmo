@@ -467,6 +467,54 @@ section { padding: clamp(76px, 11vh, 128px) 0; }
 
 .panneau-carte-note { font-size: 0.9rem; font-weight: 600; color: var(--vert-eclat); }
 
+/* ---------- Équipe ---------- */
+.equipe { padding-top: 0; }
+
+.equipe h2 { font-size: clamp(1.9rem, 3.8vw, 2.8rem); max-width: 24ch; }
+
+.equipe-intro {
+  font-size: 1.12rem;
+  color: var(--encre-claire);
+  max-width: 58ch;
+  margin-top: 18px;
+  line-height: 1.75;
+}
+
+.grille-equipe {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(32px, 5vw, 72px);
+  margin-top: clamp(44px, 7vh, 72px);
+  max-width: 900px;
+}
+
+.membre {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 3vw, 30px);
+}
+
+.membre-photo {
+  flex: none;
+  width: clamp(120px, 14vw, 150px);
+  height: clamp(120px, 14vw, 150px);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--vert-eclat);
+  padding: 5px;
+  background: var(--blanc);
+}
+
+.membre-photo-haut { object-position: center 22%; }
+
+.membre h3 { font-size: 1.22rem; margin-bottom: 8px; }
+
+.membre p { color: var(--encre-claire); font-size: 0.97rem; line-height: 1.65; }
+
+@media (max-width: 560px) {
+  .membre { flex-direction: column; align-items: flex-start; }
+}
+
 /* ---------- Contact ---------- */
 .contact {
   background: var(--noir);
@@ -562,7 +610,7 @@ footer a:hover { color: var(--vert-eclat); }
     <nav aria-label="Navigation principale">
       <a href="#finalite">La finalité</a>
       <a href="#temps">La méthode</a>
-      <a href="#prix">L'investissement</a>
+      <a href="#prix">Le prix</a>
       <a href="feuille-de-route.html">La carte IA</a>
       <a class="nav-cta" href="#contact">Demander un échange</a>
     </nav>
@@ -682,6 +730,31 @@ footer a:hover { color: var(--vert-eclat); }
         <a class="bouton" href="feuille-de-route.html">Créer ma feuille de route</a>
         <span class="panneau-carte-note">Gratuit, sans compte, sans email</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="equipe" id="equipe" aria-labelledby="equipe-titre">
+  <div class="conteneur">
+    <div class="revele">
+      <h2 id="equipe-titre">Les personnes derrière Edmo</h2>
+      <p class="equipe-intro">Edmo encapsule les process des organisations du sport et de l'entertainment dans des assistants IA dédiés. Deux expériences complémentaires portent cette mission : les projets IA menés de bout en bout, et plus de dix ans passés dans votre industrie. Vos process sont entre les mains de gens qui parlent les deux langues.</p>
+    </div>
+    <div class="grille-equipe">
+      <article class="membre revele">
+        <img class="membre-photo" src="equipe-julie-baillon.jpg" alt="Portrait de Julie Baillon" width="150" height="150" loading="lazy">
+        <div>
+          <h3>Julie Baillon</h3>
+          <p>Plus de 8 ans de projets IA, du cadrage au déploiement. Formatrice IA dans le sport depuis 2 ans.</p>
+        </div>
+      </article>
+      <article class="membre revele">
+        <img class="membre-photo membre-photo-haut" src="equipe-jb-durand.jpg" alt="Portrait de Jean-Baptiste Durand" width="150" height="150" loading="lazy">
+        <div>
+          <h3>Jean-Baptiste Durand</h3>
+          <p>Plus de 5 ans de projets IA et plus de 10 ans dans l'industrie du sport et de l'entertainment.</p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
