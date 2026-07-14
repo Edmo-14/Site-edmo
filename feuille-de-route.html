@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Créez votre feuille de route IA — MaestrIA</title>
+  <meta name="description" content="201 cas d'usage IA observés sur le terrain — fédérations, ligues, clubs, comités, évènements. Explorez, cochez, repartez avec votre feuille de route IA.">
+  <meta property="og:title" content="Créez votre feuille de route IA — MaestrIA">
+  <meta property="og:description" content="Cas d'usage IA concrets pour les structures du sport. Cochez ce qui vous parle, partagez votre feuille de route.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23021B14'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-weight='bold' font-size='36' fill='%2300DF81' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="carte.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="wordmark" href="index.html">Maestr<span class="wordmark-x">IA</span></a>
+    <a class="header-retour" href="index.html">← Retour au site</a>
+    <a class="header-feuille" href="#feuille-de-route">
+      Ma feuille de route
+      <span class="pastille" data-compteur>0</span>
+    </a>
+  </header>
+
+  <main id="haut">
+
+    <!-- ══════════ HÉRO ══════════ -->
+    <section class="hero">
+      <div class="hero-blobs" aria-hidden="true">
+        <span class="blob blob-a"></span>
+        <span class="blob blob-b"></span>
+        <span class="blob blob-c"></span>
+      </div>
+      <p class="eyebrow">Observé en formation, dans de vraies structures sportives</p>
+      <h1 class="hero-titre">Créez votre <span class="hl hl-marque">feuille de route</span> IA.</h1>
+      <p class="hero-sub"><strong data-nb-cas>—</strong> cas d'usage IA collectés sur le terrain, du compte rendu de comité directeur à la relance des impayés. Explorez par métier ou par besoin, cochez les cas que vous voulez tester, repartez avec votre feuille de route : un mini plan d'action IA, partageable par lien.</p>
+      <div class="hero-cta">
+        <a class="btn btn-tangerine" href="#explorer">Explorer les cas</a>
+        <a class="btn btn-contour" href="#mode-emploi">Comment ça marche</a>
+      </div>
+    </section>
+
+    <!-- ══════════ MARQUEE DES DOULEURS ══════════ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-piste">
+        <!-- contenu doublé par app.js pour la boucle -->
+      </div>
+    </div>
+
+    <!-- ══════════ MODE D'EMPLOI ══════════ -->
+    <section class="mode-emploi" id="mode-emploi" aria-labelledby="mode-emploi-titre">
+      <h2 id="mode-emploi-titre" class="visually-hidden">Comment ça marche</h2>
+      <ol class="etapes">
+        <li class="etape">
+          <span class="etape-num" aria-hidden="true">1</span>
+          <h3>Explorez</h3>
+          <p>Filtrez par métier ou par besoin, par faisabilité, par type de structure.</p>
+        </li>
+        <li class="etape">
+          <span class="etape-num" aria-hidden="true">2</span>
+          <h3>Cochez</h3>
+          <p>Ajoutez à votre liste chaque cas que vous voulez tester.</p>
+        </li>
+        <li class="etape">
+          <span class="etape-num" aria-hidden="true">3</span>
+          <h3>Partagez</h3>
+          <p>Copiez votre lien : il restaure votre sélection, où que vous l'ouvriez.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ══════════ EXPLORATEUR ══════════ -->
+    <section class="explorer" id="explorer" aria-labelledby="explorer-titre">
+      <h2 id="explorer-titre">La carte des cas d'usage</h2>
+
+      <div class="entrees" role="group" aria-label="Mode d'exploration">
+        <button type="button" class="entree" data-entree="metier" aria-pressed="true">Par métier</button>
+        <button type="button" class="entree" data-entree="besoin" aria-pressed="false">Par besoin</button>
+      </div>
+
+      <div class="chips chips-axe" data-chips-axe role="group" aria-label="Filtres principaux"></div>
+
+      <div class="filtres-fins">
+        <div class="filtre-groupe" role="group" aria-label="Faisabilité">
+          <span class="filtre-label">Faisabilité</span>
+          <div class="chips" data-chips-faisabilite></div>
+        </div>
+        <div class="filtre-groupe" role="group" aria-label="Type de structure">
+          <span class="filtre-label">Structure</span>
+          <div class="chips" data-chips-structures></div>
+        </div>
+        <div class="filtre-groupe" role="group" aria-label="Portée">
+          <span class="filtre-label">Portée</span>
+          <div class="chips" data-chips-portee></div>
+        </div>
+      </div>
+
+      <div class="barre-resultats">
+        <p class="nb-resultats" data-nb-resultats aria-live="polite"></p>
+        <button type="button" class="btn-lien" data-reset hidden>Tout réafficher</button>
+      </div>
+
+      <div class="grille" data-grille></div>
+
+      <div class="etat-vide" data-etat-vide hidden>
+        <p class="etat-vide-titre">Aucun cas ne coche toutes ces cases.</p>
+        <p>Retirez un filtre — ou parlons de votre cas particulier, il mérite peut-être sa fiche.</p>
+        <button type="button" class="btn btn-contour" data-reset-vide>Réinitialiser les filtres</button>
+      </div>
+    </section>
+
+    <!-- ══════════ FEUILLE DE ROUTE ══════════ -->
+    <section class="feuille" id="feuille-de-route" aria-labelledby="feuille-titre">
+      <div class="feuille-panneau">
+        <div class="feuille-tete">
+          <h2 id="feuille-titre">Votre feuille de route <span class="hl-mot">IA</span></h2>
+          <p class="feuille-compte"><span data-compteur>0</span> cas sélectionné<span data-compteur-s></span></p>
+        </div>
+        <p class="feuille-sous">La liste des cas d'usage que vous voulez tester en premier — votre mini plan d'action, à emporter en un lien.</p>
+
+        <p class="feuille-vide" data-feuille-vide>Encore vide. Remontez d'un cran et cochez les cas d'usage que vous voulez tester.</p>
+        <ul class="feuille-liste" data-feuille-liste></ul>
+
+        <div class="feuille-actions">
+          <button type="button" class="btn btn-tangerine" data-copier-lien>Copier mon lien de partage</button>
+          <p class="feuille-note">Un lien = votre sélection. Envoyez-le à votre équipe : il rouvre la carte avec vos cas déjà cochés.</p>
+        </div>
+
+        <div class="feuille-contact">
+          <p>Envie d'aller plus loin ? Faites évaluer votre feuille de route gratuitement par un expert.</p>
+          <a class="btn btn-contour-clair" href="index.html#contact">Demander un échange</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-signature">Julie Baillon <span class="wordmark-x">×</span> Edmo Conseil</p>
+    <p class="footer-note">Tous les cas de cette carte ont été observés en formation auprès de structures sportives réelles, puis anonymisés. Aucune donnée n'est collectée à votre insu : votre sélection ne vit que dans votre lien.</p>
+  </footer>
+
+  <button type="button" class="fab" data-fab aria-label="Voir ma feuille de route">
+    <span class="fab-texte">Ma feuille de route</span>
+    <span class="pastille pastille-fab" data-compteur>0</span>
+  </button>
+
+  <!-- ══════════ FICHE DÉTAIL ══════════ -->
+  <div class="voile" data-voile hidden>
+    <div class="fiche" role="dialog" aria-modal="true" aria-labelledby="fiche-titre" data-fiche>
+      <button type="button" class="fiche-fermer" data-fermer aria-label="Fermer la fiche">×</button>
+      <div class="fiche-contenu" data-fiche-contenu></div>
+    </div>
+  </div>
+
+  <div class="toast" data-toast role="status" aria-live="polite"></div>
+
+  <script src="data/cas.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

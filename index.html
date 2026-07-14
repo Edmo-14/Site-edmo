@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MaestrIA · L'intelligence artificielle, orchestrée pour vos équipes</title>
+<meta name="description" content="MaestrIA encapsule les process métiers des organisations du sport et de l'entertainment dans des assistants IA dédiés. Diagnostic financé, méthode en 3 temps, à partir de 10 000 €.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23021B14'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-weight='bold' font-size='36' fill='%2300DF81' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Charte EDMO */
+  --noir: #021B14;          /* Rich Black */
+  --vert-nuit: #032221;     /* Dark Green */
+  --vert-fonce: #03624C;    /* Bangladesh Green */
+  --vert-vif: #2CC295;      /* Mountain Meadow */
+  --vert-eclat: #00DF81;    /* Caribbean Green */
+  --blanc: #F1F7F6;         /* Anti-Flash White */
+  --pine: #06302B;
+  --frog: #17876D;
+  --encre-claire: #294D42;  /* texte secondaire sur fond clair */
+  --trait-clair: rgba(2, 27, 20, 0.14);
+  --trait-sombre: rgba(241, 247, 246, 0.16);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background: var(--blanc);
+  color: var(--vert-nuit);
+  line-height: 1.65;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-weight: 800;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  padding-block: 0.09em;
+}
+
+p { text-wrap: pretty; }
+
+.conteneur {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 48px);
+}
+
+::selection { background: var(--vert-eclat); color: var(--noir); }
+
+:focus-visible { outline: 2px solid var(--vert-eclat); outline-offset: 3px; }
+
+/* ---------- Entête ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--noir);
+  border-bottom: 1px solid var(--trait-sombre);
+}
+
+.barre {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px clamp(20px, 5vw, 48px);
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.marque {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--blanc);
+}
+
+.marque span { color: var(--vert-eclat); }
+
+nav { display: flex; align-items: center; gap: 30px; }
+
+nav a {
+  color: rgba(241, 247, 246, 0.82);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+nav a:hover { color: var(--vert-eclat); }
+
+.nav-cta {
+  background: var(--vert-eclat);
+  color: var(--noir) !important;
+  border-radius: 999px;
+  padding: 9px 20px;
+  font-weight: 800;
+  transition: background 0.25s !important;
+}
+
+.nav-cta:hover { background: var(--vert-vif); }
+
+@media (max-width: 720px) {
+  nav a:not(.nav-cta) { display: none; }
+}
+
+/* ---------- Héros ---------- */
+.heros {
+  position: relative;
+  background: var(--noir);
+  color: var(--blanc);
+  overflow: hidden;
+}
+
+.heros::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1800&q=80");
+  background-size: cover;
+  background-position: center 30%;
+  filter: saturate(0.85);
+  opacity: 0.5;
+}
+
+.heros::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, var(--noir) 8%, rgba(3, 34, 33, 0.92) 42%, rgba(3, 34, 33, 0.45) 100%);
+}
+
+.heros .conteneur {
+  position: relative;
+  z-index: 1;
+  padding-top: clamp(84px, 14vh, 160px);
+  padding-bottom: clamp(84px, 14vh, 160px);
+}
+
+.heros h1 {
+  font-size: clamp(2.5rem, 5.6vw, 4.3rem);
+  max-width: 17ch;
+  animation: lever 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+}
+
+.heros h1 em {
+  font-style: normal;
+  color: var(--vert-vif);
+}
+
+.heros-texte {
+  font-size: 1.18rem;
+  font-weight: 500;
+  line-height: 1.75;
+  color: rgba(241, 247, 246, 0.85);
+  max-width: 52ch;
+  margin-top: 26px;
+  animation: lever 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.24s both;
+}
+
+.heros-texte strong { color: var(--blanc); font-weight: 800; }
+
+.heros-actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  animation: lever 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.36s both;
+}
+
+@keyframes lever {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+
+.bouton {
+  display: inline-block;
+  background: var(--vert-eclat);
+  color: var(--noir);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.98rem;
+  padding: 15px 32px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bouton:hover { background: var(--vert-vif); transform: translateY(-2px); }
+
+.lien-fleche {
+  color: var(--blanc);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.98rem;
+  border-bottom: 2px solid var(--vert-eclat);
+  padding-bottom: 3px;
+  transition: color 0.2s;
+}
+
+.lien-fleche:hover { color: var(--vert-eclat); }
+
+/* ---------- Bandeau promesse ---------- */
+.bandeau {
+  background: var(--vert-eclat);
+  color: var(--noir);
+  padding: clamp(24px, 4vh, 36px) clamp(20px, 5vw, 48px);
+}
+
+.bandeau-grille {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 40px);
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.bandeau-item { text-align: center; padding: 2px 10px; }
+
+.bandeau-item + .bandeau-item { border-left: 1px solid rgba(2, 27, 20, 0.3); }
+
+.bandeau .valeur {
+  display: block;
+  font-weight: 800;
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.bandeau .detail {
+  display: block;
+  font-weight: 600;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin-top: 2px;
+}
+
+@media (max-width: 720px) {
+  .bandeau-grille { grid-template-columns: 1fr; gap: 18px; }
+  .bandeau-item + .bandeau-item { border-left: none; border-top: 1px solid rgba(2, 27, 20, 0.3); padding-top: 18px; }
+}
+
+/* ---------- Sections ---------- */
+section { padding: clamp(76px, 11vh, 128px) 0; }
+
+/* Apparition au défilement, sans jamais masquer par défaut */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .revele {
+      animation: fondu linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 55%;
+    }
+    @keyframes fondu {
+      from { opacity: 0.25; }
+      to { opacity: 1; }
+    }
+  }
+}
+
+/* ---------- Finalité ---------- */
+.finalite h2 {
+  font-size: clamp(1.9rem, 3.8vw, 2.8rem);
+  max-width: 24ch;
+}
+
+.finalite-intro {
+  font-size: 1.15rem;
+  color: var(--encre-claire);
+  max-width: 58ch;
+  margin-top: 18px;
+}
+
+.grille-finalite {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(28px, 4vw, 56px);
+  margin-top: clamp(44px, 7vh, 72px);
+}
+
+.benefice { grid-column: span 4; }
+
+.benefice:nth-child(1) { grid-column: 1 / span 4; }
+.benefice:nth-child(2) { grid-column: 5 / span 4; margin-top: 34px; }
+.benefice:nth-child(3) { grid-column: 9 / span 4; margin-top: 68px; }
+
+@media (max-width: 820px) {
+  .benefice, .benefice:nth-child(n) { grid-column: 1 / -1; margin-top: 0; }
+}
+
+.benefice .repere {
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: var(--vert-eclat);
+  margin-bottom: 18px;
+}
+
+.benefice:nth-child(2) .repere { background: var(--vert-vif); }
+.benefice:nth-child(3) .repere { background: var(--vert-fonce); }
+
+.benefice h3 { font-size: 1.3rem; margin-bottom: 12px; }
+
+.benefice p { color: var(--encre-claire); font-size: 0.99rem; }
+
+/* ---------- Les 4 temps ---------- */
+.temps {
+  background: var(--vert-nuit);
+  color: var(--blanc);
+}
+
+.temps h2 { font-size: clamp(1.9rem, 3.8vw, 2.8rem); max-width: 22ch; }
+
+.temps-intro {
+  font-size: 1.12rem;
+  color: rgba(241, 247, 246, 0.78);
+  max-width: 54ch;
+  margin-top: 18px;
+  line-height: 1.75;
+}
+
+.liste-temps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(28px, 3.5vw, 44px);
+  margin-top: clamp(48px, 7vh, 76px);
+}
+
+@media (min-width: 1080px) {
+  .liste-temps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.temps-item {
+  border-top: 3px solid var(--vert-fonce);
+  padding-top: 22px;
+}
+
+.temps-item .numero {
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--vert-eclat);
+  line-height: 1.2;
+  padding-block: 0.09em;
+  margin-bottom: 6px;
+}
+
+.temps-item h3 { font-size: 1.18rem; margin-bottom: 10px; }
+
+.temps-item p { color: rgba(241, 247, 246, 0.78); font-size: 0.96rem; line-height: 1.7; }
+
+.note-financement {
+  margin-top: clamp(44px, 6vh, 64px);
+  background: var(--vert-fonce);
+  border-radius: 12px;
+  padding: 26px 30px;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.note-financement strong { color: var(--vert-eclat); }
+
+/* ---------- Prix ---------- */
+.prix { background: var(--blanc); }
+
+.prix .conteneur {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: clamp(40px, 6vw, 88px);
+  align-items: center;
+}
+
+.prix h2 { font-size: clamp(1.9rem, 3.8vw, 2.8rem); }
+
+.prix .argument {
+  font-size: 1.08rem;
+  color: var(--encre-claire);
+  margin-top: 18px;
+  line-height: 1.75;
+}
+
+.panneau-prix {
+  background: var(--noir);
+  color: var(--blanc);
+  border-radius: 16px;
+  padding: clamp(36px, 5vw, 52px);
+}
+
+.panneau-prix .mention {
+  font-weight: 800;
+  font-size: 0.92rem;
+  color: var(--vert-vif);
+  margin-bottom: 14px;
+}
+
+.panneau-prix .montant {
+  font-size: clamp(2.6rem, 5vw, 3.7rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  padding-block: 0.06em;
+}
+
+.panneau-prix .montant small {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: rgba(241, 247, 246, 0.75);
+  letter-spacing: 0;
+  margin-bottom: 4px;
+}
+
+.panneau-prix .montant em { font-style: normal; color: var(--vert-eclat); }
+
+.panneau-prix ul { list-style: none; margin-top: 26px; display: grid; gap: 12px; }
+
+.panneau-prix li {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  font-size: 0.97rem;
+  font-weight: 500;
+  color: rgba(241, 247, 246, 0.88);
+}
+
+.panneau-prix li::before {
+  content: "✓";
+  color: var(--vert-eclat);
+  font-weight: 800;
+  flex: none;
+}
+
+/* ---------- Appel Carte IA ---------- */
+.carte-appel { padding-top: 0; }
+
+.panneau-carte {
+  background: var(--vert-fonce);
+  color: var(--blanc);
+  border-radius: 16px;
+  padding: clamp(36px, 5vw, 56px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+}
+
+@media (max-width: 820px) {
+  .panneau-carte { grid-template-columns: 1fr; }
+}
+
+.panneau-carte h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); margin-bottom: 16px; }
+
+.panneau-carte p { color: rgba(241, 247, 246, 0.85); font-size: 1.02rem; line-height: 1.75; }
+
+.panneau-carte-action { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+
+.panneau-carte-note { font-size: 0.9rem; font-weight: 600; color: var(--vert-eclat); }
+
+/* ---------- Contact ---------- */
+.contact {
+  background: var(--noir);
+  color: var(--blanc);
+}
+
+.contact h2 { font-size: clamp(1.9rem, 3.8vw, 2.8rem); }
+
+.contact-grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(40px, 6vw, 88px);
+  margin-top: clamp(36px, 5vh, 56px);
+}
+
+.contact-texte {
+  font-size: 1.1rem;
+  color: rgba(241, 247, 246, 0.82);
+  line-height: 1.8;
+}
+
+.contact-texte p + p { margin-top: 16px; }
+
+.contact-texte a { color: var(--vert-eclat); font-weight: 700; text-decoration: none; }
+
+.contact-texte a:hover { text-decoration: underline; }
+
+.champ { margin-bottom: 24px; }
+
+label {
+  display: block;
+  font-weight: 800;
+  font-size: 0.88rem;
+  color: var(--vert-vif);
+  margin-bottom: 8px;
+}
+
+input, textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--trait-sombre);
+  color: var(--blanc);
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: 10px 2px;
+  transition: border-color 0.25s;
+}
+
+input:focus, textarea:focus { outline: none; border-bottom-color: var(--vert-eclat); }
+
+input::placeholder, textarea::placeholder { color: rgba(241, 247, 246, 0.62); }
+
+textarea { resize: vertical; min-height: 110px; }
+
+.confirmation {
+  margin-top: 18px;
+  font-weight: 600;
+  color: var(--vert-eclat);
+  display: none;
+}
+
+.confirmation.visible { display: block; }
+
+/* ---------- Pied de page ---------- */
+footer {
+  background: var(--noir);
+  color: rgba(241, 247, 246, 0.66);
+  border-top: 1px solid var(--trait-sombre);
+  padding: 26px 0;
+  font-size: 0.9rem;
+}
+
+footer .conteneur { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+footer a { color: rgba(241, 247, 246, 0.85); text-decoration: none; font-weight: 600; }
+
+footer a:hover { color: var(--vert-eclat); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .kicker, .heros h1, .heros-texte, .heros-actions { animation: none; }
+  .bouton { transition: background 0.25s; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="barre">
+    <a class="marque" href="#">Maestr<span>IA</span></a>
+    <nav aria-label="Navigation principale">
+      <a href="#finalite">La finalité</a>
+      <a href="#temps">La méthode</a>
+      <a href="#prix">L'investissement</a>
+      <a href="feuille-de-route.html">La carte IA</a>
+      <a class="nav-cta" href="#contact">Demander un échange</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="heros" aria-label="Introduction">
+  <div class="conteneur">
+    <h1>Encapsulez vos process. <em>Libérez vos équipes.</em></h1>
+    <p class="heros-texte">Chaque process métier devient un assistant IA dédié, adopté par vos collaborateurs : le recours à l'IA est automatisé, la qualité de sortie garantie. <strong>À partir de 10 000 €</strong>, éligible à des financements en partie.</p>
+    <div class="heros-actions">
+      <a class="bouton" href="#contact">Demander de l'information</a>
+      <a class="lien-fleche" href="#temps">Découvrir la méthode</a>
+    </div>
+  </div>
+</section>
+
+<div class="bandeau" role="note">
+  <div class="bandeau-grille">
+  <div class="bandeau-item">
+    <span class="valeur">20 à 30 %</span>
+    <span class="detail">de gain de productivité visé sur vos process clés</span>
+  </div>
+  <div class="bandeau-item">
+    <span class="valeur">10 000 €</span>
+    <span class="detail">le budget d'entrée pour déployer l'IA</span>
+  </div>
+  <div class="bandeau-item">
+    <span class="valeur">Diagnostic</span>
+    <span class="detail">finançable en partie</span>
+  </div>
+  </div>
+</div>
+
+<section class="finalite" id="finalite">
+  <div class="conteneur">
+    <div class="revele">
+      <h2>Ce qui change vraiment pour votre organisation</h2>
+      <p class="finalite-intro">Pas de technologie pour la technologie : chaque mini assistant IA déployé répond à un usage précis de vos équipes, mesuré sur le terrain.</p>
+    </div>
+    <div class="grille-finalite">
+      <article class="benefice revele">
+        <span class="repere" aria-hidden="true"></span>
+        <h3>Du temps rendu aux équipes</h3>
+        <p>Les tâches répétitives qui encombrent vos journées sont confiées à des assistants IA sur mesure. Vos collaborateurs se concentrent sur le terrain, les partenaires, le public.</p>
+      </article>
+      <article class="benefice revele">
+        <span class="repere" aria-hidden="true"></span>
+        <h3>Des collaborateurs autonomes</h3>
+        <p>Pas de dépendance à un prestataire. Chaque outil est construit avec vos équipes, pour vos équipes, et elles sont formées à le faire vivre au quotidien.</p>
+      </article>
+      <article class="benefice revele">
+        <span class="repere" aria-hidden="true"></span>
+        <h3>Une organisation qui maîtrise ses process</h3>
+        <p>Le déploiement commence par une cartographie complète de vos façons de travailler. Vous repartez avec une vision claire, IA ou pas.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="temps" id="temps">
+  <div class="conteneur">
+    <div class="revele">
+      <h2>Une méthode en trois temps</h2>
+      <p class="temps-intro">Chaque temps prépare le suivant. Vous avancez pas à pas, en décidant à chaque étape de la suite, sans engagement sur l'ensemble.</p>
+    </div>
+    <div class="liste-temps">
+      <article class="temps-item revele">
+        <span class="numero" aria-hidden="true">1</span>
+        <h3>Diagnostic, direction par direction</h3>
+        <p>Des entretiens avec chaque service pour cartographier vos process, choisir les bons cas d'usage et décider combien on en outille. Vous recevez un plan d'action concret, qui vous appartient.</p>
+      </article>
+      <article class="temps-item revele">
+        <span class="numero" aria-hidden="true">2</span>
+        <h3>Encapsulage des process retenus</h3>
+        <p>Chaque process choisi est encapsulé dans un assistant IA dédié, construit avec vos équipes : le recours à l'IA est automatisé, la qualité de sortie garantie.</p>
+      </article>
+      <article class="temps-item revele">
+        <span class="numero" aria-hidden="true">3</span>
+        <h3>Formation des équipes</h3>
+        <p>En deux volets selon les profils : prise en main des outils IA généralistes pour tous, approfondissement pour un petit groupe qui apprend à encapsuler lui-même ses process.</p>
+      </article>
+    </div>
+    <p class="note-financement revele"><strong>Un déploiement finançable.</strong> Le diagnostic et la formation peuvent être pris en charge par des dispositifs publics et votre budget formation, ce qui réduit fortement votre reste à charge.</p>
+  </div>
+</section>
+
+<section class="prix" id="prix">
+  <div class="conteneur">
+    <div class="revele">
+      <h2>Un prix fixe, connu d'avance, sans surprise</h2>
+      <p class="argument">Pas de mission de conseil qui s'éternise. MaestrIA est un produit de déploiement packagé : vous savez ce que vous payez, ce que vous recevez, et quand.</p>
+      <p class="argument">Le diagnostic vous appartient. Vous décidez ensuite, tiroir par tiroir, ce que vous déployez.</p>
+    </div>
+    <div class="panneau-prix revele">
+      <p class="mention">Déploiement complet</p>
+      <p class="montant"><small>à partir de</small><em>10 000 €</em></p>
+      <ul>
+        <li>Diagnostic et cartographie de vos process</li>
+        <li>Vos process encapsulés dans des assistants IA dédiés</li>
+        <li>Formation de vos équipes incluse</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="carte-appel" id="carte" aria-labelledby="carte-titre">
+  <div class="conteneur">
+    <div class="panneau-carte revele">
+      <div class="panneau-carte-texte">
+        <h2 id="carte-titre">Testez par vous-même : créez votre feuille de route IA</h2>
+        <p>Explorez 201 cas d'usage IA observés sur le terrain dans des structures sportives réelles : compte rendu de comité directeur, relance des impayés, tri des candidatures... Filtrez par métier ou par besoin, cochez les cas qui vous parlent et repartez avec votre feuille de route, partageable par simple lien.</p>
+      </div>
+      <div class="panneau-carte-action">
+        <a class="bouton" href="feuille-de-route.html">Créer ma feuille de route</a>
+        <span class="panneau-carte-note">Gratuit, sans compte, sans email</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="conteneur">
+    <h2 class="revele">Parlons de votre organisation</h2>
+    <div class="contact-grille">
+      <div class="contact-texte revele">
+        <p>Racontez-nous où vous en êtes : vos équipes, vos process, vos questions sur l'IA. Nous revenons vers vous rapidement pour un premier échange, sans engagement.</p>
+        <p>Vous pouvez aussi nous écrire directement à <a href="mailto:jbdurand@edmo.fr">jbdurand@edmo.fr</a>.</p>
+      </div>
+      <form id="formulaire" class="revele" novalidate>
+        <div class="champ">
+          <label for="nom">Votre nom</label>
+          <input type="text" id="nom" name="nom" placeholder="Prénom et nom" autocomplete="name" required>
+        </div>
+        <div class="champ">
+          <label for="email">Votre email</label>
+          <input type="email" id="email" name="email" placeholder="vous@organisation.fr" autocomplete="email" required>
+        </div>
+        <div class="champ">
+          <label for="message">Votre message</label>
+          <textarea id="message" name="message" placeholder="Votre organisation, vos enjeux, vos questions..." required></textarea>
+        </div>
+        <button type="submit" class="bouton">Envoyer ma demande</button>
+        <p class="confirmation" id="confirmation" role="status">Votre logiciel de messagerie va s'ouvrir avec votre demande pré-remplie. Il ne reste qu'à l'envoyer.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="conteneur">
+    <span>MaestrIA · L'IA orchestrée pour le sport et l'entertainment</span>
+    <a href="mailto:jbdurand@edmo.fr">jbdurand@edmo.fr</a>
+  </div>
+</footer>
+
+<script>
+// Formulaire : construit un mailto pré-rempli
+document.getElementById('formulaire').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var nom = document.getElementById('nom').value.trim();
+  var email = document.getElementById('email').value.trim();
+  var message = document.getElementById('message').value.trim();
+  if (!nom || !email || !message) {
+    [['nom', nom], ['email', email], ['message', message]].forEach(function (paire) {
+      var champ = document.getElementById(paire[0]);
+      champ.style.borderBottomColor = paire[1] ? '' : 'var(--vert-eclat)';
+    });
+    return;
+  }
+  var sujet = encodeURIComponent('Demande d’information MaestrIA · ' + nom);
+  var corps = encodeURIComponent(
+    'Nom : ' + nom + '\nEmail : ' + email + '\n\n' + message
+  );
+  window.location.href = 'mailto:jbdurand@edmo.fr?subject=' + sujet + '&body=' + corps;
+  document.getElementById('confirmation').classList.add('visible');
+});
+</script>
+
+</body>
+</html>
