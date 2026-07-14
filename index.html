@@ -480,6 +480,57 @@ section { padding: clamp(76px, 11vh, 128px) 0; }
   line-height: 1.75;
 }
 
+.duo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(20px, 3.5vw, 40px);
+  margin-top: clamp(36px, 5vh, 56px);
+  max-width: 900px;
+}
+
+.duo-pilier {
+  font-weight: 800;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.duo-pilier::before {
+  content: "";
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: var(--vert-eclat);
+  margin-bottom: 14px;
+}
+
+.duo-pilier:last-of-type::before { background: var(--vert-fonce); }
+
+.duo-x {
+  align-self: center;
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
+  font-weight: 800;
+  color: var(--vert-eclat);
+  line-height: 1;
+}
+
+.duo-conclusion {
+  margin-top: clamp(26px, 4vh, 40px);
+  font-size: 1.15rem;
+  color: var(--encre-claire);
+  max-width: 58ch;
+  line-height: 1.75;
+}
+
+.duo-conclusion strong { color: var(--vert-fonce); }
+
+@media (max-width: 720px) {
+  .duo { grid-template-columns: 1fr; gap: 18px; }
+  .duo-x { justify-self: start; }
+}
+
 .grille-equipe {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -739,7 +790,13 @@ footer a:hover { color: var(--vert-eclat); }
   <div class="conteneur">
     <div class="revele">
       <h2 id="equipe-titre">Les personnes derrière Edmo</h2>
-      <p class="equipe-intro">Edmo encapsule les process des organisations du sport et de l'entertainment dans des assistants IA dédiés. Deux expériences complémentaires portent cette mission : les projets IA menés de bout en bout, et plus de dix ans passés dans votre industrie. Vos process sont entre les mains de gens qui parlent les deux langues.</p>
+      <p class="equipe-intro">Edmo encapsule les process des organisations du sport et de l'entertainment dans des assistants IA dédiés. Deux expériences complémentaires portent cette mission :</p>
+      <div class="duo">
+        <p class="duo-pilier">Les projets IA menés de bout en bout</p>
+        <span class="duo-x" aria-hidden="true">×</span>
+        <p class="duo-pilier">Plus de dix ans passés dans votre industrie</p>
+      </div>
+      <p class="duo-conclusion">Vos process sont entre les mains de gens qui <strong>parlent les deux langues</strong>.</p>
     </div>
     <div class="grille-equipe">
       <article class="membre revele">
