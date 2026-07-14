@@ -483,52 +483,58 @@ section { padding: clamp(76px, 11vh, 128px) 0; }
 .duo {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  align-items: start;
-  gap: clamp(20px, 3.5vw, 40px);
-  margin-top: clamp(36px, 5vh, 56px);
-  max-width: 900px;
+  align-items: center;
+  gap: clamp(24px, 4vw, 52px);
+  margin-top: clamp(48px, 7vh, 76px);
+  max-width: 940px;
+  margin-inline: auto;
 }
 
 .duo-pilier {
   font-weight: 800;
-  font-size: clamp(1.15rem, 2vw, 1.4rem);
-  line-height: 1.4;
-  letter-spacing: -0.01em;
+  font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+  line-height: 1.35;
+  letter-spacing: -0.02em;
   text-wrap: balance;
+  color: var(--vert-nuit);
 }
 
-.duo-pilier::before {
-  content: "";
-  display: block;
-  width: 14px;
-  height: 14px;
-  background: var(--vert-eclat);
-  margin-bottom: 14px;
-}
-
-.duo-pilier:last-of-type::before { background: var(--vert-fonce); }
+.duo-pilier:first-of-type { text-align: right; }
 
 .duo-x {
-  align-self: center;
-  font-size: clamp(1.9rem, 3vw, 2.5rem);
+  display: grid;
+  place-items: center;
+  width: clamp(54px, 6vw, 66px);
+  height: clamp(54px, 6vw, 66px);
+  border-radius: 50%;
+  background: var(--vert-eclat);
+  color: var(--noir);
+  font-size: clamp(1.5rem, 2.2vw, 1.9rem);
   font-weight: 800;
-  color: var(--vert-eclat);
   line-height: 1;
 }
 
 .duo-conclusion {
-  margin-top: clamp(26px, 4vh, 40px);
-  font-size: 1.15rem;
+  margin-top: clamp(30px, 5vh, 48px);
+  font-size: clamp(1.1rem, 1.6vw, 1.25rem);
+  font-weight: 600;
   color: var(--encre-claire);
-  max-width: 58ch;
+  text-align: center;
+  max-width: 940px;
+  margin-inline: auto;
   line-height: 1.75;
 }
 
-.duo-conclusion strong { color: var(--vert-fonce); }
+.duo-conclusion strong {
+  color: var(--vert-nuit);
+  font-weight: 800;
+  border-bottom: 2px solid var(--vert-eclat);
+  padding-bottom: 2px;
+}
 
 @media (max-width: 720px) {
-  .duo { grid-template-columns: 1fr; gap: 18px; }
-  .duo-x { justify-self: start; }
+  .duo { grid-template-columns: 1fr; gap: 20px; justify-items: center; }
+  .duo-pilier, .duo-pilier:first-of-type { text-align: center; }
 }
 
 .grille-equipe {
@@ -537,6 +543,7 @@ section { padding: clamp(76px, 11vh, 128px) 0; }
   gap: clamp(32px, 5vw, 72px);
   margin-top: clamp(44px, 7vh, 72px);
   max-width: 900px;
+  margin-inline: auto;
 }
 
 .membre {
@@ -563,7 +570,7 @@ section { padding: clamp(76px, 11vh, 128px) 0; }
 .membre p { color: var(--encre-claire); font-size: 0.97rem; line-height: 1.65; }
 
 @media (max-width: 560px) {
-  .membre { flex-direction: column; align-items: flex-start; }
+  .membre { flex-direction: column; align-items: center; text-align: center; }
 }
 
 /* ---------- Contact ---------- */
@@ -792,7 +799,7 @@ footer a:hover { color: var(--vert-eclat); }
       <h2 id="equipe-titre">Les personnes derrière Edmo</h2>
       <p class="equipe-intro">Edmo encapsule les process des organisations du sport et de l'entertainment dans des assistants IA dédiés. Deux expériences complémentaires portent cette mission :</p>
       <div class="duo">
-        <p class="duo-pilier">Les projets IA menés de bout en bout</p>
+        <p class="duo-pilier">Des projets IA menés de bout en bout</p>
         <span class="duo-x" aria-hidden="true">×</span>
         <p class="duo-pilier">Plus de dix ans passés dans votre industrie</p>
       </div>
