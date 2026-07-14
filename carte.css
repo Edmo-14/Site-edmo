@@ -1,5 +1,5 @@
 /* ============================================================
-   La Carte IA du Sport × MaestrIA — feuille de style
+   La Carte IA du Sport × Edmo — feuille de style
    Charte EDMO : Anti-Flash White, Rich Black, verts Meadow/Caribbean
    ============================================================ */
 
@@ -538,3 +538,12 @@ button { font-family: inherit; cursor: pointer; }
   .marquee-piste { animation: none; transform: none; }
   .blob { animation: none; }
 }
+
+/* ============================================================
+   Curseur croix de repérage — injecté par app.js (synchronisé
+   depuis la carte source), non repris dans la charte Edmo.
+   Sans ces règles il resterait dans le flux et créerait un
+   grand espace blanc sous le footer.
+   ============================================================ */
+.curseur { display: none; }
+body.curseur-actif, body.curseur-actif * { cursor: auto; }

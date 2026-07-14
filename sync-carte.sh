@@ -1,6 +1,6 @@
 #!/bin/bash
 # ============================================================
-# Synchronise la Carte IA du Sport vers le site MaestrIA.
+# Synchronise la Carte IA du Sport vers le site Edmo.
 #
 # Source  : librairie-skills-sport/carte-ia-sport/  (référence)
 # Cible   : maestria-landing/                       (ce dossier)
@@ -9,8 +9,8 @@
 #   - data/cas.js  (les fiches de cas, générées côté source)
 #   - app.js       (la logique applicative, copiée telle quelle)
 #
-# Jamais synchronisés (spécifiques MaestrIA) :
-#   - feuille-de-route.html (structure + funnel MaestrIA)
+# Jamais synchronisés (spécifiques Edmo) :
+#   - feuille-de-route.html (structure + funnel Edmo)
 #   - carte.css             (charte EDMO)
 #
 # Usage : ./sync-carte.sh          → synchronise
