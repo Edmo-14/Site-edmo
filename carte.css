@@ -391,7 +391,8 @@ button { font-family: inherit; cursor: pointer; }
    FAB (mobile)
    ============================================================ */
 .fab {
-  position: fixed; bottom: 20px; right: 20px; z-index: 200;
+  /* posé au-dessus du widget de l'agent de test (agent-test.js), aligné sur son bord droit */
+  position: fixed; bottom: 160px; right: 32px; z-index: 200;
   display: none; align-items: center; gap: 10px;
   background: var(--accent); color: var(--encre); border: 2px solid var(--encre);
   padding: 13px 20px; border-radius: var(--pilule); box-shadow: var(--ombre-relief);

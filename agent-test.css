@@ -1,0 +1,157 @@
+/* ============================================================
+   Agent de test (ElevenLabs) : fenêtre de coordonnées
+   Partagé par index.html et feuille-de-route.html.
+   Autonome : ne dépend d'aucun style de page.
+   ============================================================ */
+.test-fenetre {
+  --t-noir: #021B14;
+  --t-nuit: #032221;
+  --t-eclat: #00DF81;
+  --t-vif: #2CC295;
+  --t-blanc: #F1F7F6;
+  --t-trait: rgba(241, 247, 246, 0.16);
+
+  width: min(480px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: clamp(28px, 5vw, 44px);
+  background: var(--t-nuit);
+  color: var(--t-blanc);
+  border: 1px solid var(--t-trait);
+  border-radius: 16px;
+  overflow-y: auto;
+  font-family: "Manrope", system-ui, sans-serif;
+  box-sizing: border-box;
+}
+
+.test-fenetre *, .test-fenetre *::before, .test-fenetre *::after { box-sizing: border-box; }
+
+.test-fenetre::backdrop { background: rgba(2, 27, 20, 0.78); }
+
+.test-fenetre[open] { animation: fenetre-entree 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+
+@keyframes fenetre-entree {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+.test-fenetre h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 4vw, 1.9rem);
+  font-weight: 800;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  padding-right: 44px;
+  color: var(--t-blanc);
+}
+
+.test-intro {
+  margin: 12px 0 0;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.65;
+  color: rgba(241, 247, 246, 0.82);
+  text-wrap: pretty;
+}
+
+.test-fermer {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1.5px solid var(--t-trait);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--t-blanc);
+  font-family: inherit;
+  font-size: 1.45rem;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.25s, color 0.25s;
+}
+
+.test-fermer:hover { border-color: var(--t-eclat); color: var(--t-eclat); }
+
+.test-fermer:focus-visible,
+.test-bouton:focus-visible {
+  outline: 2px solid var(--t-eclat);
+  outline-offset: 3px;
+}
+
+.test-formulaire { margin-top: 28px; }
+
+.test-identite {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 20px;
+}
+
+@media (max-width: 440px) {
+  .test-identite { grid-template-columns: 1fr; }
+}
+
+.test-champ { margin-bottom: 24px; }
+
+.test-champ label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--t-vif);
+}
+
+.test-champ input {
+  width: 100%;
+  padding: 10px 2px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--t-trait);
+  border-radius: 0;
+  color: var(--t-blanc);
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 500;
+  transition: border-color 0.25s;
+}
+
+.test-champ input:focus { outline: none; border-bottom-color: var(--t-eclat); }
+.test-champ input::placeholder { color: rgba(241, 247, 246, 0.62); }
+.test-champ input:user-invalid { border-bottom-color: #FF9E8A; }
+
+.test-bouton {
+  width: 100%;
+  margin-top: 6px;
+  padding: 15px 32px;
+  background: var(--t-eclat);
+  color: var(--t-noir);
+  border: none;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.98rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.test-bouton:hover { background: var(--t-vif); transform: translateY(-2px); }
+
+.test-mention {
+  margin: 18px 0 0;
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.55;
+  color: rgba(241, 247, 246, 0.66);
+}
+
+.test-mention a { color: var(--t-vif); font-weight: 700; }
+
+@media (prefers-reduced-motion: reduce) {
+  .test-fenetre[open] { animation: none; }
+  .test-bouton:hover { transform: none; }
+}
