@@ -178,54 +178,6 @@ nav a:hover { color: var(--vert-eclat); }
   animation: lever 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.36s both;
 }
 
-/* Carte CTA : test gratuit avec l'agent vocal */
-.heros-grille {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 340px;
-  gap: clamp(32px, 5vw, 64px);
-  align-items: center;
-}
-
-.heros-test {
-  background: rgba(3, 34, 33, 0.78);
-  border: 1px solid var(--trait-sombre);
-  border-top: 3px solid var(--vert-eclat);
-  border-radius: 18px;
-  padding: 30px 28px;
-  backdrop-filter: blur(6px);
-  animation: lever 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.48s both;
-}
-
-.heros-test-kicker {
-  display: inline-block;
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--vert-eclat);
-}
-
-.heros-test h2 {
-  font-size: 1.45rem;
-  line-height: 1.3;
-  margin-top: 12px;
-  color: var(--blanc);
-}
-
-.heros-test p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: rgba(241, 247, 246, 0.8);
-  margin-top: 12px;
-}
-
-.heros-test .bouton { margin-top: 22px; width: 100%; text-align: center; }
-
-@media (max-width: 960px) {
-  .heros-grille { grid-template-columns: 1fr; }
-  .heros-test { max-width: 460px; }
-}
-
 @keyframes lever {
   from { opacity: 0; transform: translateY(18px); }
   to { opacity: 1; transform: none; }
@@ -703,7 +655,7 @@ footer a:hover { color: var(--vert-eclat); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .kicker, .heros h1, .heros-texte, .heros-actions, .heros-test { animation: none; }
+  .kicker, .heros h1, .heros-texte, .heros-actions { animation: none; }
   .bouton { transition: background 0.25s; }
 }
 </style>
@@ -727,21 +679,13 @@ footer a:hover { color: var(--vert-eclat); }
 <main>
 
 <section class="heros" aria-label="Introduction">
-  <div class="conteneur heros-grille">
-    <div>
+  <div class="conteneur">
     <h1>Encapsulez vos process. <em>Libérez vos équipes.</em></h1>
     <p class="heros-texte">Chaque process métier devient un assistant IA dédié, adopté par vos collaborateurs : le recours à l'IA est automatisé, la qualité de sortie garantie. <strong>À partir de 10 000 €</strong>, éligible à des financements en partie.</p>
     <div class="heros-actions">
       <a class="bouton" href="#contact">Demander de l'information</a>
       <a class="lien-fleche" href="#temps">Découvrir la méthode</a>
     </div>
-    </div>
-    <aside class="heros-test" aria-labelledby="test-titre">
-      <span class="heros-test-kicker">Gratuit · 5 minutes</span>
-      <h2 id="test-titre">Testez l'automatisation d'un de vos process</h2>
-      <p>Sans savoir coder, sans savoir utiliser une IA.</p>
-      <button class="bouton" type="button" id="lancer-test">Lancer le test</button>
-    </aside>
   </div>
 </section>
 
@@ -940,16 +884,55 @@ document.getElementById('formulaire').addEventListener('submit', function (e) {
 });
 </script>
 
-<elevenlabs-convai agent-id="agent_9401m2t6n45he6nrtw5hpqtf3jah"></elevenlabs-convai>
+<!-- Agent de test (ElevenLabs), habillé à la charte « Le stade de nuit » -->
+<elevenlabs-convai
+  agent-id="agent_9401m2t6n45he6nrtw5hpqtf3jah"
+  avatar-orb-color-1="#00DF81"
+  avatar-orb-color-2="#03624C"
+  text-contents='{"main_label":"Testez l’automatisation d’un de vos process en 5 minutes","start_call":"Lancer le test"}'
+></elevenlabs-convai>
 <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
 <script>
-// Bouton du hero : ouvre le widget ElevenLabs (bouton interne du shadow DOM)
-document.getElementById('lancer-test').addEventListener('click', function () {
-  var widget = document.querySelector('elevenlabs-convai');
-  var racine = widget && widget.shadowRoot;
-  var bouton = racine && racine.querySelector('button');
-  if (bouton) bouton.click();
-});
+// Le widget vit dans un shadow DOM : on y injecte les tokens de la charte
+(function () {
+  var charte = [
+    '* {',
+    '  --el-base: #032221 !important;',
+    '  --el-base-hover: #06302B !important;',
+    '  --el-base-active: #06302B !important;',
+    '  --el-base-border: rgba(241, 247, 246, 0.16) !important;',
+    '  --el-base-subtle: rgba(241, 247, 246, 0.72) !important;',
+    '  --el-base-primary: #F1F7F6 !important;',
+    '  --el-accent: #00DF81 !important;',
+    '  --el-accent-hover: #2CC295 !important;',
+    '  --el-accent-active: #2CC295 !important;',
+    '  --el-accent-border: #03624C !important;',
+    '  --el-accent-subtle: #2CC295 !important;',
+    '  --el-accent-primary: #021B14 !important;',
+    '  --el-button-radius: 999px !important;',
+    '  --el-sheet-radius: 16px !important;',
+    '  --el-compact-sheet-radius: 16px !important;',
+    '  --el-bubble-radius: 12px !important;',
+    '  --el-input-radius: 12px !important;',
+    '  font-family: Manrope, system-ui, sans-serif !important;',
+    '}',
+    '.bg-base { color: var(--el-base-primary); border: 1px solid var(--el-base-border); }',
+    '.max-w-64 { font-size: 0.92rem; font-weight: 700; line-height: 1.4; max-width: 15rem; text-wrap: balance; }',
+    'button { font-weight: 800 !important; }',
+    'button:focus-visible { outline: 2px solid #00DF81 !important; outline-offset: 3px !important; }'
+  ].join('\n');
+  customElements.whenDefined('elevenlabs-convai').then(function () {
+    var widget = document.querySelector('elevenlabs-convai');
+    var essais = 0;
+    (function injecter() {
+      var racine = widget && widget.shadowRoot;
+      if (!racine) { if (essais++ < 50) setTimeout(injecter, 100); return; }
+      var style = document.createElement('style');
+      style.textContent = charte;
+      racine.appendChild(style);
+    })();
+  });
+})();
 </script>
 
 </body>
