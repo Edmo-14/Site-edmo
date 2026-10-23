@@ -3992,5 +3992,598 @@ window.CAS = [
   "prompt": "Voici l'instruction d'un dossier d'habilitation : [coller : évaluations par critère avec notes et observations de l'instructeur]. Rédige pour la commission : 1) la note de synthèse : forces du dossier, faiblesses, points d'attention, en citant les critères concernés, 2) l'avis global proposé (favorable / favorable avec réserves / défavorable) avec la motivation qui agrège les évaluations, 3) si réserves : leur formulation précise et vérifiable. L'avis doit découler logiquement des évaluations : signale toute incohérence entre les notes et les observations.",
   "conseil": "Faire signaler les incohérences notes/observations avant de formuler l'avis : c'est souvent le signe qu'un critère a été mal évalué, pas mal rédigé.",
   "skill": null
+ },
+ {
+  "id": "decrypter-devis-prestataire",
+  "titre": "Décrypter le devis d'un prestataire de match sur ses postes clés",
+  "service": "evenementiel",
+  "besoin": "documents-longs",
+  "faisabilite": "facile",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "club",
+   "comite",
+   "salle"
+  ],
+  "preuve": "demande",
+  "douleur": "Les devis de vos prestataires pour un match ou un événement sportif (sécurité, sonorisation, restauration, tribunes provisoires) arrivent trop détaillés ou peu lisibles.",
+  "gain": "L'IA vous rend une synthèse des postes clés du devis et de leurs montants : vous n'avez plus qu'à vérifier la synthèse.",
+  "prompt": "Voici le devis de [prestataire : sécurité, sonorisation, restauration, tribunes provisoires] pour [match ou événement sportif] du [date] à [stade ou salle]. Synthétise-le en tableau : postes principaux, quantités, montants.",
+  "conseil": null,
+  "skill": null
+ },
+ {
+  "id": "actualiser-presentation-financeurs",
+  "titre": "Actualiser la présentation financière de la saison pour les financeurs",
+  "service": "finance",
+  "besoin": "templates",
+  "faisabilite": "moyen",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "club",
+   "comite"
+  ],
+  "preuve": "demande",
+  "douleur": "Chaque trimestre de la saison, vous préparez à la main la présentation financière destinée au bureau, au conseil d'administration, aux banques ou aux collectivités partenaires, et ce support vous prend du temps.",
+  "gain": "L'IA produit le support actualisé à partir du rapport financier du trimestre ou de la version précédente : vous vérifiez les chiffres et ajustez le discours.",
+  "prompt": "Voici [la présentation du trimestre précédent ou le rapport financier du trimestre] de [club, ligue, comité], destinée à [bureau, conseil d'administration, banque, collectivité partenaire], et les données de [trimestre de la saison] : [fichier]. Reprends la structure de la version précédente, ou celle du rapport, et actualise chaque chiffre à partir de [fichier] (billetterie, partenariats, subventions, masse salariale). Un message clé par slide, chiffres repris tels quels.",
+  "conseil": "Un outil de génération de présentations transforme ensuite le plan en slides ; vérifiez chaque chiffre contre le fichier source avant diffusion.",
+  "skill": null
+ },
+ {
+  "id": "identite-nouvel-evenement",
+  "titre": "Proposer le nom, la baseline et le récit d'un nouvel événement sportif",
+  "service": "marcom",
+  "besoin": "redaction",
+  "faisabilite": "facile",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "club",
+   "comite"
+  ],
+  "preuve": "demande",
+  "douleur": "En amont d'un nouvel événement sportif (tournoi, course, match de gala), vous avez très peu d'éléments mais devez déjà disposer de supports pour le présenter à des partenaires et financeurs.",
+  "gain": "L'IA vous propose plusieurs pistes de nom, de baseline et de récit à partir de quelques éléments clés : vous choisissez et affinez avant de présenter l'événement.",
+  "prompt": "Nous lançons [événement sportif : tournoi, course, match de gala] destiné à [public : licenciés, familles, entreprises partenaires] sur [territoire], pour [date ou saison]. Éléments connus : [3 à 5 faits clés]. Propose 5 noms, une baseline pour chacun, un récit de présentation de 5 lignes et une idée de visuel concept. Ton [institutionnel / dynamique].",
+  "conseil": null,
+  "skill": null
+ },
+ {
+  "id": "suivi-projet-joueur-centre-formation",
+  "titre": "Suivre le projet sportif et scolaire d'un joueur du centre de formation",
+  "service": "sportif",
+  "besoin": "reunions",
+  "faisabilite": "facile",
+  "portee": "sport",
+  "structures": [
+   "federation",
+   "club"
+  ],
+  "preuve": "demande",
+  "douleur": "Le double projet d'un joueur du centre de formation, sportif d'un côté, scolaire et extra-sportif de l'autre, se discute en réunions successives avec des interlocuteurs différents : staff, établissement scolaire, famille. D'un compte rendu à l'autre, les informations se répètent ou se perdent, et vous ne voyez plus ce qui avance et ce qui revient sans cesse.",
+  "gain": "L'IA agrège les comptes rendus de la période en une synthèse unique du parcours du joueur, volet par volet : changements, points résolus ou persistants, points critiques et leur évolution. Vous n'avez plus qu'à la relire.",
+  "prompt": "Voici les comptes rendus des réunions de suivi de [joueur, catégorie] au centre de formation entre le [date] et le [date], avec [acteurs : entraîneur, responsable scolaire, famille]. Pour le volet sportif, puis pour le volet scolaire et extra-sportif, classe chaque sujet en trois colonnes : résolu, en progrès, persistant. Signale les changements d'une réunion à l'autre et termine par les points critiques. Une page maximum.",
+  "conseil": "Garder la même trame de compte rendu d'une réunion de suivi à l'autre, avec un volet sportif et un volet scolaire, facilite la comparaison.",
+  "skill": null
+ },
+ {
+  "id": "vulgariser-document-juridique",
+  "titre": "Expliquer en langage clair un contrat de sponsoring ou un courrier d'avocat",
+  "service": "juridique",
+  "besoin": "documents-longs",
+  "faisabilite": "facile",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "club",
+   "comite"
+  ],
+  "preuve": "demande",
+  "douleur": "Un contrat de sponsoring, une convention avec la collectivité propriétaire du stade ou un courrier d'avocat arrive, trop complexe pour être compris sans interprétation juridique. Vous devez pourtant le transmettre au bureau et aux équipes du club.",
+  "gain": "L'IA reformule les points clés en langage clair, sans trahir le sens juridique : vous en comprenez les enjeux et pouvez le transmettre au bureau et aux équipes.",
+  "prompt": "Voici [document : contrat de sponsoring, convention de mise à disposition du stade, courrier d'avocat] concernant [objet : partenariat, équipement, litige avec un licencié]. Reformule ses points clés en langage clair pour [destinataire : dirigeant bénévole, équipe commerciale, staff], afin d'en faire comprendre les enjeux. Garde le sens juridique exact.",
+  "conseil": "Faire relire la version vulgarisée par la personne qui suit le dossier avant diffusion.",
+  "skill": null
+ },
+ {
+  "id": "benchmark-prix-offres-concurrentes",
+  "titre": "Comparer ses prix d'abonnement aux offres concurrentes de son territoire",
+  "service": "billetterie",
+  "besoin": "veille",
+  "faisabilite": "moyen",
+  "portee": "sport",
+  "structures": [
+   "ligue",
+   "club",
+   "salle"
+  ],
+  "preuve": "demande",
+  "douleur": "Avant de fixer vos tarifs d'abonnement et de billetterie pour la saison, vous avez peu de temps pour analyser les prix des offres concurrentes de votre zone : autres clubs, spectacles, événements. Collecter ces données à la main, à partir de multiples sources, est long.",
+  "gain": "L'IA compile les offres concurrentes de votre zone dans un tableau sourcé (formules, prix) : vous vérifiez les sources et ajustez vos tarifs de la saison.",
+  "prompt": "Recense les offres de [zone] qui visent le même public que [notre club, notre salle] pour la saison [saison] : abonnements, billets et formules d'autres clubs, de salles de spectacle et d'événements. Pour chacune : structure qui la propose, formule, prix, source. Présente un tableau trié par type de formule.",
+  "conseil": "Utiliser une IA qui cite ses sources et vérifier chaque prix sur la page d'origine : elle peut confondre les tarifs d'une saison sur l'autre.",
+  "skill": null
+ },
+ {
+  "id": "contreparties-vendues-vs-prevues",
+  "titre": "Vérifier que l'offre vendue au sponsor et son contrat concordent",
+  "service": "commercial",
+  "besoin": "documents-longs",
+  "faisabilite": "moyen",
+  "portee": "sport",
+  "structures": [
+   "federation",
+   "ligue",
+   "club",
+   "salle"
+  ],
+  "preuve": "demande",
+  "douleur": "Entre l'offre vendue au sponsor, le contrat signé, ses annexes et les contrats des prestataires qui livrent les contreparties (écrans LED, hospitalités, places), des écarts ou des contradictions passent inaperçus. Vous risquez de vendre une contrepartie que personne n'a prévu de livrer.",
+  "gain": "L'IA compare les pièces entre elles et liste chaque écart ou contradiction avec sa référence : vous n'avez plus qu'à corriger les écarts.",
+  "prompt": "Voici les pièces du partenariat avec [sponsor] pour [saison] : [offre vendue, contrat, annexe des contreparties, cahier des charges, contrats des prestataires : écrans LED, hospitalités, billetterie]. Compare-les et liste dans un tableau chaque écart ou contradiction, de contenu ou de périmètre (contrepartie, quantité, nombre de matchs, emplacement), en citant la pièce et l'article de chaque côté.",
+  "conseil": null,
+  "skill": null
+ },
+ {
+  "id": "verifier-reponse-ao-cahier-charges",
+  "titre": "Vérifier que l'offre d'un prestataire de match couvre le cahier des charges",
+  "service": "evenementiel",
+  "besoin": "documents-longs",
+  "faisabilite": "moyen",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "club",
+   "salle"
+  ],
+  "preuve": "demande",
+  "douleur": "La réponse d'un prestataire à votre appel d'offres pour un match ou un événement sportif (sécurité, restauration, hospitalités) ne correspond pas toujours à votre cahier des charges : des prestations sont oubliées, mal chiffrées ou non couvertes. Repérer ces écarts à la main est long et risqué.",
+  "gain": "L'IA confronte la réponse au cahier des charges exigence par exigence et fait ressortir écarts et incohérences : vous n'avez plus qu'à les faire préciser au prestataire.",
+  "prompt": "Voici notre cahier des charges pour [prestation : sécurité, restauration, hospitalités] de [match ou événement sportif] et la réponse de [prestataire]. Pour chaque exigence, indique si la réponse la couvre entièrement, partiellement ou pas du tout, avec le passage correspondant. Liste ensuite les incohérences et les questions à poser au prestataire.",
+  "conseil": null,
+  "skill": null
+ },
+ {
+  "id": "preparer-negociation-prestataire",
+  "titre": "Préparer la négociation de l'offre d'un prestataire de match",
+  "service": "evenementiel",
+  "besoin": "analyse",
+  "faisabilite": "moyen",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "club",
+   "salle"
+  ],
+  "preuve": "demande",
+  "douleur": "Vous voulez faire baisser le prix de l'offre d'un prestataire de match ou d'événement sportif, mais peinez à identifier les leviers sans analyser finement l'offre. Il vous faut pourtant préparer l'échange en amont de la négociation.",
+  "gain": "L'IA croise l'offre et votre cahier des charges pour dégager des pistes d'optimisation argumentées et les questions à poser : vous choisissez celles que vous défendez.",
+  "prompt": "Voici l'offre de [prestataire : sécurité, restauration, sonorisation] pour [match ou événement sportif] et notre cahier des charges. À partir des écarts et incohérences entre l'offre et notre cahier des charges, propose des pistes d'optimisation, un argument pour chacune et les questions à poser au prestataire avant la négociation.",
+  "conseil": null,
+  "skill": null
+ },
+ {
+  "id": "comparer-versions-contrat",
+  "titre": "Comparer les versions d'un contrat de sponsoring et en lister les écarts",
+  "service": "commercial",
+  "besoin": "documents-longs",
+  "faisabilite": "facile",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "club",
+   "comite"
+  ],
+  "preuve": "demande",
+  "douleur": "Le sponsor renvoie le contrat de partenariat modifié avec des évolutions mal documentées, ou votre annexe des contreparties passe par plusieurs versions. À chaque fois, vous relisez tout à la main pour retrouver ce qui a changé.",
+  "gain": "L'IA met les versions en parallèle, liste chaque écart, y compris les plus subtils, et synthétise les évolutions majeures : vous ne relisez que les passages modifiés.",
+  "prompt": "Voici [deux ou plusieurs] versions du contrat de partenariat avec [sponsor] pour [saison], datées du [dates], ou plusieurs contrats proches signés avec des partenaires d'une même catégorie (fournisseurs officiels, partenaires maillot). Liste toutes les différences dans un tableau (article, texte de chaque document), en tête celles qui touchent prix, délais, échéances, garanties, conditions et contreparties. Pour des versions successives, signale les changements absents de la liste des modifications annoncées. Résume les écarts majeurs en cinq lignes.",
+  "conseil": "Toujours demander l'article concerné pour chaque écart, et vérifier dans le document les écarts à fort enjeu.",
+  "skill": null
+ },
+ {
+  "id": "obligations-contrat-partenariat",
+  "titre": "Transformer un contrat de partenariat en fiche d'exécution et plan d'action",
+  "service": "commercial",
+  "besoin": "documents-longs",
+  "faisabilite": "moyen",
+  "portee": "sport",
+  "structures": [
+   "federation",
+   "ligue",
+   "club",
+   "comite"
+  ],
+  "preuve": "demande",
+  "douleur": "Une fois le contrat de partenariat signé, les contreparties dues au partenaire et les actions à mener n'y sont pas toujours explicites : visibilité, hospitalités, activations, échéances de paiement. Vous les extrayez et les résumez à la main, avec le risque d'oublier une donnée clé.",
+  "gain": "L'IA remplit votre fiche de synthèse standard du partenariat et en déduit un plan d'action daté sur la saison, chaque ligne avec son article d'origine : vous désignez les responsables et diffusez aux équipes.",
+  "prompt": "Voici le contrat de partenariat signé avec [partenaire] pour [saison ou durée] et notre modèle de fiche de synthèse. Remplis la fiche (montants et échéances de paiement, dates, contreparties dues : visibilité, hospitalités, places, activations, engagements, clauses critiques), puis transforme les obligations de chaque partie en plan d'action daté : action, échéance (date ou match), article de référence. Signale tout champ introuvable.",
+  "conseil": "Fixer le modèle de fiche partenaire une fois pour toutes dans un projet dédié : chaque contrat de partenariat sort au même format.",
+  "skill": null
+ },
+ {
+  "id": "controle-dossier-securite-checklist",
+  "titre": "Contrôler le dossier sécurité d'un match avec la checklist réglementaire",
+  "service": "evenementiel",
+  "besoin": "analyse",
+  "faisabilite": "facile",
+  "portee": "transversal",
+  "structures": [
+   "ligue",
+   "club",
+   "comite",
+   "salle"
+  ],
+  "preuve": "demande",
+  "douleur": "Avant de déposer le dossier sécurité d'un match ou d'une manifestation sportive, vous vérifiez à la main que les plans intègrent bien chaque exigence incendie et accessibilité, et ce contrôle est chronophage.",
+  "gain": "L'IA passe le dossier au crible de votre checklist et liste les éléments présents, absents ou incomplets : vous n'avez plus qu'à compléter les manques.",
+  "prompt": "Voici le dossier sécurité de [match ou manifestation sportive] du [date] à [stade ou salle] (plans d'implantation, notice de sécurité) et notre checklist réglementaire [incendie, accessibilité]. Pour chaque point de la checklist, indique s'il est traité, absent ou incomplet, avec la page du dossier concernée. Présente le résultat en tableau, points manquants en tête.",
+  "conseil": "Construire la checklist une fois à partir des exigences de votre commission de sécurité, puis la réutiliser à chaque match.",
+  "skill": null
+ },
+ {
+  "id": "verifier-integration-modifications",
+  "titre": "Vérifier que la plaquette partenaires corrigée intègre toutes vos demandes",
+  "service": "commercial",
+  "besoin": "documents-longs",
+  "faisabilite": "facile",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "club"
+  ],
+  "preuve": "demande",
+  "douleur": "Vous avez envoyé à votre agence une liste de corrections sur la plaquette partenaires de la saison, et la nouvelle version revient. Vérifier que chaque correction demandée a bien été intégrée est difficile.",
+  "gain": "L'IA met votre demande en regard de la nouvelle version et liste ce qui est intégré, partiel ou oublié : vous n'avez plus qu'à relancer sur les manques.",
+  "prompt": "Voici ma demande de modifications envoyée à [agence] et la nouvelle version de [plaquette partenaires ou dossier de sponsoring] de la saison [saison]. Pour chaque modification demandée, indique si elle est intégrée, partiellement intégrée ou absente, en citant le passage concerné. Termine par la liste des points à relancer.",
+  "conseil": "Numéroter les demandes de modification dès l'envoi pour que la vérification se fasse point par point.",
+  "skill": null
+ },
+ {
+  "id": "fiche-reference-evenement",
+  "titre": "Constituer la fiche référence d'un événement sportif déjà organisé",
+  "service": "commercial",
+  "besoin": "templates",
+  "faisabilite": "moyen",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "club",
+   "comite"
+  ],
+  "preuve": "demande",
+  "douleur": "Vos fiches références d'événements sportifs déjà organisés, qui doivent prouver votre savoir-faire dans une candidature ou face à un partenaire, sont souvent pauvres ou incomplètes.",
+  "gain": "L'IA rédige une fiche complète à partir des documents internes et d'un audio où le porteur raconte l'événement : vous n'avez plus qu'à valider les chiffres et la mise en forme.",
+  "prompt": "Voici les documents de [événement sportif organisé : championnat, finale, tournoi] et la transcription d'un audio où [directeur de l'événement] le raconte. Rédige une fiche référence d'une page : contexte, objectifs, chiffres clés présents dans les sources (spectateurs, équipes, bénévoles), réalisations, partenaires, résultats. Ton factuel, destinée à [dossier de candidature, partenaire, collectivité].",
+  "conseil": "Faire raconter l'événement à voix haute par son porteur : l'audio apporte ce que les documents ne disent pas.",
+  "skill": null
+ },
+ {
+  "id": "redaction-rapport-rse",
+  "titre": "Préparer le rapport RSE de la saison à partir de l'édition précédente",
+  "service": "direction",
+  "besoin": "redaction",
+  "faisabilite": "moyen",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "club"
+  ],
+  "preuve": "demande",
+  "douleur": "À chaque saison, vous relisez à la main le rapport RSE précédent pour en extraire ce qui doit être actualisé. Puis vous reformulez une grande quantité d'informations hétérogènes.",
+  "gain": "L'IA liste les éléments à actualiser, puis rédige les paragraphes de synthèse à partir des points clés de chaque service : vous vérifiez les chiffres et relisez.",
+  "prompt": "Étape 1 : voici notre rapport RSE de la saison dernière ; liste dans un tableau les éléments datés ou chiffrés à actualiser, avec la page. Étape 2 : voici les points clés transmis par [services : sportif, billetterie, partenariats, développement des clubs] pour la partie [thème : déplacements des équipes et des supporters, engagement auprès des licenciés et des bénévoles, gouvernance] ; rédige des paragraphes homogènes dans le ton de l'édition précédente, sans ajouter de chiffre absent des contributions.",
+  "conseil": "Envoyer le tableau des éléments à actualiser à chaque service dès le départ : la collecte devient une simple relance.",
+  "skill": null
+ },
+ {
+  "id": "restitution-conference-equipe",
+  "titre": "Restituer un congrès fédéral à son équipe sous forme de support synthétique",
+  "service": "direction",
+  "besoin": "redaction",
+  "faisabilite": "facile",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "club",
+   "comite"
+  ],
+  "preuve": "demande",
+  "douleur": "Vous revenez d'un congrès fédéral, d'un colloque sur le sport ou d'un séminaire des clubs avec des pages de notes, et les mettre en forme en support de restitution pour l'équipe vous prend un temps que vous n'avez pas.",
+  "gain": "L'IA structure vos notes en support de restitution clair : vous n'avez plus qu'à relire et présenter.",
+  "prompt": "Voici mes notes prises pendant [événement : congrès fédéral, colloque sur le sport, séminaire des clubs] sur [thème]. Structure un support de restitution clair pour [équipe : salariés, élus, bénévoles] autour de cinq idées clés. Format : une slide par idée, texte court.",
+  "conseil": "Dicter ses impressions juste après l'événement, tant qu'elles sont fraîches, plutôt que de rouvrir ses notes une semaine plus tard.",
+  "skill": null
+ },
+ {
+  "id": "indicateurs-suivi-rh",
+  "titre": "Choisir les indicateurs de suivi de ses équipes salariées et bénévoles",
+  "service": "rh",
+  "besoin": "analyse",
+  "faisabilite": "facile",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "club",
+   "comite"
+  ],
+  "preuve": "demande",
+  "douleur": "Vous voulez piloter les équipes salariées et bénévoles de votre club ou de votre ligue, mais vous ne savez pas quels indicateurs suivre.",
+  "gain": "L'IA vous propose une courte liste d'indicateurs reliés à vos objectifs : vous choisissez ceux que vous suivrez vraiment.",
+  "prompt": "Nous sommes [club, ligue, comité] avec [effectif salarié, nombre de bénévoles et d'éducateurs]. Nos objectifs RH pour la saison : [objectifs : fidéliser les bénévoles, former les éducateurs]. Propose 8 indicateurs de suivi au maximum, chacun avec sa définition et l'objectif qu'il éclaire.",
+  "conseil": "Partir de vos objectifs et non d'une liste standard d'indicateurs : un indicateur que personne n'alimente ne sert à rien.",
+  "skill": null
+ },
+ {
+  "id": "synthese-rapport-etonnement",
+  "titre": "Synthétiser le rapport d'étonnement d'un nouvel arrivant au club",
+  "service": "rh",
+  "besoin": "reunions",
+  "faisabilite": "moyen",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "club"
+  ],
+  "preuve": "demande",
+  "douleur": "Vous menez l'entretien d'étonnement d'un nouvel arrivant au club, salarié, éducateur ou bénévole, puis sa mise au propre vous prend du temps.",
+  "gain": "L'IA transforme l'enregistrement de l'entretien en synthèse structurée des échanges. Vous n'avez plus qu'à relire et décider des suites.",
+  "prompt": "Voici la transcription de l'entretien d'étonnement de [poste : éducateur, chargé de billetterie, bénévole] après [durée] au sein de [club, ligue]. Rédige une synthèse structurée des échanges. Reprends ses formulations sans les adoucir.",
+  "conseil": "Demander l'accord du nouvel arrivant avant d'enregistrer, et lui faire relire le rapport : il en devient coauteur.",
+  "skill": null
+ },
+ {
+  "id": "donnees-sociales-elus-cse",
+  "titre": "Présenter les données sociales du club aux élus du CSE",
+  "service": "rh",
+  "besoin": "documents-longs",
+  "faisabilite": "moyen",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "club"
+  ],
+  "preuve": "demande",
+  "douleur": "Vous devez tirer de la base de données économiques et sociales du club, secteur sportif et secteur administratif compris, un rapport clair pour les élus du CSE, et structurer ces informations est complexe.",
+  "gain": "L'IA extrait les points clés et les structure en rapport clair, chiffres sourcés : vous vérifiez et commentez au lieu de compiler.",
+  "prompt": "Voici les extraits de la base de données économiques et sociales de [club professionnel, fédération] pour [thème de la consultation : orientations, situation économique, politique sociale]. Distingue le secteur sportif (joueurs, staff) et le secteur administratif. Produis un rapport de cinq pages au maximum pour les élus : points clés, chiffres à l'appui. Cite la source de chaque chiffre.",
+  "conseil": "Vérifier chaque chiffre contre la base avant diffusion : une erreur devant les élus coûte plus cher que le temps gagné.",
+  "skill": null
+ },
+ {
+  "id": "ecoles-cibles-alternants",
+  "titre": "Cibler les écoles qui forment le profil d'un poste à pourvoir au club",
+  "service": "rh",
+  "besoin": "veille",
+  "faisabilite": "facile",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "club",
+   "comite"
+  ],
+  "preuve": "demande",
+  "douleur": "Quand votre club ou votre ligue recrute, sélectionner les écoles qui forment le bon profil est fastidieux.",
+  "gain": "L'IA vous dresse une liste d'écoles adaptées au poste, avec leurs formations : vous vérifiez et ciblez vos envois.",
+  "prompt": "Je recrute pour le poste de [poste : chargé de partenariats, éducateur sportif, analyste vidéo] ([type de contrat]) au sein de [club, ligue] à [zone géographique], à partir de [date]. Critères du poste : [critères]. Liste dix écoles ou formations qui forment ce profil : diplôme, niveau, lien source. Classe-les par pertinence au regard de ces critères.",
+  "conseil": "Faire activer la recherche web et vérifier chaque formation sur le site de l'école : l'IA peut citer des cursus qui n'existent plus.",
+  "skill": null
+ },
+ {
+  "id": "assistant-procedures-internes",
+  "titre": "Créer un assistant qui répond sur les procédures de licence et de match",
+  "service": "direction",
+  "besoin": "assistants",
+  "faisabilite": "moyen",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "club",
+   "comite"
+  ],
+  "preuve": "demande",
+  "douleur": "Vos procédures de prise de licence, de mutation ou d'organisation de match, et le mode d'emploi de vos outils métier, sont peu consultés et peu accessibles, ou ne sont écrits nulle part. Vos équipes ont du mal à y retrouver les étapes à suivre, et les nouveaux arrivants se forment sans documentation.",
+  "gain": "L'assistant répond aux questions de l'équipe à partir de vos procédures, étape par étape, en citant le passage concerné : vous n'avez plus qu'à tenir vos procédures à jour.",
+  "prompt": "Tu es l'assistant interne de [club, ligue, comité] pour [procédure ou outil métier : prise de licence, mutation, organisation de match, logiciel de billetterie]. Réponds aux questions de l'équipe et des nouveaux arrivants uniquement à partir des documents fournis ([procédures], [checklist]), étape par étape, en citant la section utilisée. Si la réponse n'y figure pas, dis-le.",
+  "conseil": "Rédiger d'abord les procédures avec l'IA et les mettre à jour à chaque cas nouveau : l'assistant ne vaut que ce que vaut sa documentation.",
+  "skill": null
+ },
+ {
+  "id": "question-juridique-sourcee",
+  "titre": "Répondre à une question de droit du sport en citant codes et jurisprudence",
+  "service": "juridique",
+  "besoin": "veille",
+  "faisabilite": "moyen",
+  "portee": "sport",
+  "structures": [
+   "federation",
+   "ligue",
+   "club",
+   "comite"
+  ],
+  "preuve": "demande",
+  "douleur": "Une question tombe sur le Code du sport, les règlements de votre fédération ou le droit des associations, et vous perdez un temps précieux entre textes et jurisprudence.",
+  "gain": "L'IA vous livre une réponse argumentée avec ses sources (articles et décisions citées) : vous vérifiez chaque référence avant de vous en servir.",
+  "prompt": "Question juridique : [question précise : responsabilité du club pendant un match, statut d'un bénévole, mutation d'un licencié]. Contexte : [club, ligue, comité ; situation]. Recherche dans les sources officielles (Code du sport, autres codes, jurisprudence, règlements fédéraux) et rédige une réponse argumentée en citant chaque source avec son lien.",
+  "conseil": "Ouvrir chaque source citée : une IA peut produire une référence plausible mais inexacte.",
+  "skill": null
+ },
+ {
+  "id": "guide-accueil-procedures-poste",
+  "titre": "Formaliser les procédures d'un poste du club en guide d'accueil",
+  "service": "rh",
+  "besoin": "templates",
+  "faisabilite": "facile",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "club",
+   "comite"
+  ],
+  "preuve": "demande",
+  "douleur": "Les procédures du secrétariat, des licences ou de la billetterie de votre club ne sont écrites nulle part : tout passe à l'oral, et chaque nouvel arrivant doit tout se faire réexpliquer.",
+  "gain": "L'IA transforme vos explications dictées en guide d'accueil structuré, étape par étape : vous relisez, et le prochain arrivant démarre avec un document.",
+  "prompt": "Voici la description en vrac de mes tâches au poste de [poste : secrétariat du club, gestion des licences, billetterie] : [dictée ou notes]. Formalise-les en procédures étape par étape (saisie d'une licence, préparation d'un jour de match), puis assemble un guide d'accueil pour un nouvel arrivant.",
+  "conseil": "Dicter les procédures en les exécutant plutôt que de mémoire : les étapes oubliées ressortent d'elles-mêmes.",
+  "skill": null
+ },
+ {
+  "id": "benchmark-comptes-clubs",
+  "titre": "Comparer les chiffres publiés par des clubs comparables",
+  "service": "finance",
+  "besoin": "veille",
+  "faisabilite": "moyen",
+  "portee": "sport",
+  "structures": [
+   "federation",
+   "ligue",
+   "club"
+  ],
+  "preuve": "demande",
+  "douleur": "Chaque saison, pour vous situer face aux clubs comparables, vous ouvrez leurs comptes et rapports publiés un par un et recopiez à la main les mêmes chiffres dans un tableau.",
+  "gain": "L'IA extrait les indicateurs choisis dans chaque document, les aligne dans un tableau comparatif sourcé et prépare la trame du support : vous vérifiez les valeurs douteuses et commentez les écarts.",
+  "prompt": "Voici [nombre] rapports ou comptes publiés par [clubs comparables : même division, budget proche]. Pour chacun, extrais [indicateurs : chiffre d'affaires, masse salariale, résultat, affluence] avec la saison et la page source. Présente un tableau (une ligne par club, une colonne par indicateur), signale les valeurs absentes au lieu de les estimer, puis propose la trame d'un support de [nombre] slides présentant ce comparatif.",
+  "conseil": "Exiger la saison et la source de chaque chiffre : les documents publiés ne portent pas tous sur la même période.",
+  "skill": null
+ },
+ {
+  "id": "bilan-campagne-optimisation",
+  "titre": "Faire le bilan de sa campagne d'abonnement et en tirer des optimisations",
+  "service": "marcom",
+  "besoin": "analyse",
+  "faisabilite": "facile",
+  "portee": "transversal",
+  "structures": [
+   "ligue",
+   "club",
+   "salle"
+  ],
+  "preuve": "demande",
+  "douleur": "Votre campagne d'abonnement de la saison est terminée et il faut en rendre compte à partir de rapports disparates, longs à comparer. Rédiger un bilan clair et en tirer les leviers de succès demande du recul et du temps.",
+  "gain": "L'IA aligne les indicateurs, compare les campagnes et rédige un bilan lisible avec des pistes d'optimisation : vous n'avez plus qu'à valider et arbitrer.",
+  "prompt": "Voici les résultats de [campagne d'abonnement ou de réabonnement de la saison, par vague ou par canal] sur [canaux] et les objectifs fixés au départ : [KPI : portée, engagement, abonnements vendus, taux de réabonnement, coût]. Aligne les indicateurs comparables dans un tableau, rédige un bilan (ce qui a marché, ce qui a moins marché, ce qui distingue les meilleures campagnes) et termine par trois pistes d'optimisation pour [campagne de la saison suivante]. Une page maximum.",
+  "conseil": "Donner à l'IA les objectifs fixés au départ, sinon le bilan décrit les chiffres sans dire s'ils sont bons.",
+  "skill": null
+ },
+ {
+  "id": "verifier-reclamation-contrat",
+  "titre": "Vérifier la réclamation d'un partenaire au regard de son contrat",
+  "service": "commercial",
+  "besoin": "analyse",
+  "faisabilite": "facile",
+  "portee": "sport",
+  "structures": [
+   "federation",
+   "ligue",
+   "club",
+   "salle"
+  ],
+  "preuve": "demande",
+  "douleur": "Un partenaire réclame une contrepartie qu'il estime due (places, hospitalités, visibilité pendant les matchs) : avant de répondre, vous devez vérifier à partir de plusieurs documents (contrat, annexes, conditions générales) si vous êtes en tort.",
+  "gain": "L'IA confronte la réclamation à chaque pièce et vous dit, clause à l'appui, ce qui est fondé ou non ; vous décidez de la réponse.",
+  "prompt": "Voici une réclamation de [partenaire] sur [contrepartie : places, hospitalités, passages LED, visibilité] et les pièces de référence : [contrat de partenariat], [annexe des contreparties], [échanges]. Pour chaque grief, indique si les pièces le confirment, l'infirment ou ne disent rien, en citant la clause ou le passage. Conclus par une évaluation globale : fondée, partiellement fondée ou non fondée.",
+  "conseil": "Fournir toutes les pièces : l'IA ne peut pas conclure sur un engagement pris dans un document qu'elle n'a pas lu.",
+  "skill": null
+ },
+ {
+  "id": "retoucher-photo-charte",
+  "titre": "Retoucher une photo de match pour l'adapter à sa charte",
+  "service": "marcom",
+  "besoin": "visuels",
+  "faisabilite": "facile",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "club",
+   "comite"
+  ],
+  "preuve": "demande",
+  "douleur": "Une bonne photo de votre dernier match a des couleurs qui ne collent pas à votre charte ou attend votre logo, et la retouche à la main est fastidieuse.",
+  "gain": "L'IA corrige les couleurs ou ajoute le logo en quelques instructions ; vous n'avez plus qu'à valider le rendu.",
+  "prompt": "Voici une photo de [match, joueur, action]. Retouche-la pour [usage : réseaux du club, affiche, site] : harmonise les couleurs avec [couleurs de la charte], ajoute [logo du club ou de la compétition] en [position]. Garde les visages, les maillots et les logos des partenaires intacts.",
+  "conseil": "Vérifier que la retouche ne modifie ni les visages ni les logos de partenaires, qui doivent rester exacts.",
+  "skill": null
+ },
+ {
+  "id": "article-vers-audio-video",
+  "titre": "Transformer le compte rendu d'un match en version audio ou vidéo courte",
+  "service": "marcom",
+  "besoin": "visuels",
+  "faisabilite": "moyen",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "club"
+  ],
+  "preuve": "demande",
+  "douleur": "Vos comptes rendus de match restent figés à l'écrit, sur le site, alors que vous diffusez sur plusieurs plateformes.",
+  "gain": "L'IA produit un script, une version audio et une vidéo courte à partir du compte rendu ; vous relisez et ajustez avant publication.",
+  "prompt": "Voici le compte rendu de [match] publié sur [site du club]. Transforme-le en script de [durée] pour une vidéo verticale destinée à [réseau], puis en version audio de [durée]. Garde le score, les faits et les citations exacts.",
+  "conseil": "Garder une voix et un habillage constants d'une vidéo à l'autre pour que les supporters reconnaissent le club.",
+  "skill": null
+ },
+ {
+  "id": "tarifs-abonnement-pouvoir-achat",
+  "titre": "Confronter ses tarifs d'abonnement au pouvoir d'achat de ses supporters",
+  "service": "billetterie",
+  "besoin": "analyse",
+  "faisabilite": "moyen",
+  "portee": "transversal",
+  "structures": [
+   "club",
+   "salle"
+  ],
+  "preuve": "demande",
+  "douleur": "Vous fixez vos tarifs d'abonnement sans les confronter aux données de rémunération INSEE des communes où vivent vos supporters, alors que ce lien détermine vos ventes.",
+  "gain": "L'IA croise vos grilles tarifaires avec les données de rémunération INSEE par commune et repère les catégories de places trop chères pour votre public ; vous arbitrez la grille.",
+  "prompt": "Voici notre grille de tarifs [abonnements / billets] de la saison [saison] et la liste des communes de notre bassin de supporters : [communes]. Pour chaque commune, reprends les données de rémunération de l'INSEE [indicateur et millésime], en citant le tableau source. Calcule pour chaque catégorie de place la part du revenu mensuel qu'elle représente, puis signale les catégories qui semblent peu accessibles.",
+  "conseil": "Télécharger vous-même les données de rémunération INSEE par commune et les fournir à l'IA, plutôt que de la laisser les chercher : vous savez quel indicateur et quel millésime elle utilise.",
+  "skill": null
+ },
+ {
+  "id": "assistant-questions-abonnes",
+  "titre": "Créer un assistant qui répond aux questions récurrentes des abonnés",
+  "service": "billetterie",
+  "besoin": "assistants",
+  "faisabilite": "complexe",
+  "portee": "transversal",
+  "structures": [
+   "club",
+   "salle"
+  ],
+  "preuve": "demande",
+  "douleur": "Les mêmes questions de vos abonnés, sur l'accès au stade les jours de match, le transfert de billets ou les remboursements, reviennent constamment.",
+  "gain": "L'assistant répond rapidement à partir de vos conditions générales et de vos FAQ ; votre équipe traite les demandes qu'il ne couvre pas.",
+  "prompt": "Un assistant connecté à vos documents de référence (conditions générales de vente, FAQ billetterie, règlement intérieur du stade, informations d'accès les jours de match) répond aux abonnés sur [canal]. Il cite la source de chaque réponse.",
+  "process": [
+   "Rassembler les documents de référence (conditions générales, FAQ, règlement intérieur, accès les jours de match)",
+   "Lister les questions qui reviennent le plus souvent",
+   "Configurer l'assistant pour répondre uniquement à partir des documents en citant la source",
+   "Mettre l'assistant à disposition des abonnés"
+  ],
+  "conseil": "Commencer par les dix questions les plus fréquentes de la saison passée avant d'élargir le périmètre.",
+  "skill": null
  }
 ];
