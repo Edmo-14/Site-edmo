@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- V2 (26/10) : bandeau de références déroulant « Ils ont formé ou accompagné leurs équipes avec nous » (11 logos, pause au survol et par bouton, grille fixe en mouvement réduit) sous le bandeau promesse, encart partenaire formation Fyve Akademy dans la note de financement de la méthode, mention Fyve dans le pied de page, à la demande de JB. Reste de la V1 (index.html en ligne au 26/10) inchangé. -->
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -251,6 +252,131 @@ nav a:hover { color: var(--vert-eclat); }
   .bandeau-item + .bandeau-item { border-left: none; border-top: 1px solid rgba(2, 27, 20, 0.3); padding-top: 18px; }
 }
 
+/* ---------- Références ---------- */
+.references {
+  background: var(--blanc);
+  padding: clamp(44px, 7vh, 72px) 0;
+  border-bottom: 1px solid var(--trait-clair);
+}
+
+.references-titre {
+  text-align: center;
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--encre-claire);
+  max-width: none;
+}
+
+.references { overflow-x: clip; }
+
+.references-defile {
+  position: relative;
+  margin: clamp(28px, 4vh, 40px) calc(50% - 50vw) 0;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 12%, #000 88%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 12%, #000 88%, transparent 100%);
+}
+
+.references-piste {
+  display: flex;
+  width: max-content;
+  animation: defile 52s linear infinite;
+}
+
+.references-defile:hover .references-piste,
+.references-defile:focus-within .references-piste,
+.references.en-pause .references-piste,
+.references.hors-champ .references-piste { animation-play-state: paused; }
+
+@keyframes defile {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.references-logos {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex: none;
+}
+
+.references-logos li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 72px;
+  padding-inline: clamp(22px, 2.6vw, 36px);
+}
+
+.references-logos img {
+  display: block;
+  max-height: 56px;
+  max-width: 132px;
+  width: auto;
+  height: auto;
+  filter: grayscale(1) contrast(1.1);
+  opacity: 0.66;
+  mix-blend-mode: multiply;
+  transition: filter 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.references-logos img.large { max-width: 150px; max-height: 44px; }
+
+.references-logos img.compact { max-height: 38px; }
+
+.references-logos img.inverse { filter: invert(1) grayscale(1); }
+
+.references-logos li:hover img { filter: none; opacity: 1; }
+
+.references-logos li:hover img.inverse { filter: invert(1) grayscale(1); }
+
+.references-pause {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 18px auto 0;
+  padding: 7px 14px 7px 11px;
+  background: none;
+  border: 1px solid var(--trait-clair);
+  border-radius: 999px;
+  color: var(--encre-claire);
+  font: 700 0.8rem/1 'Manrope', sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.references-pause:hover { border-color: var(--vert-fonce); color: var(--vert-nuit); background: rgba(2, 27, 20, 0.04); }
+
+.references-pause svg { width: 12px; height: 12px; fill: currentColor; }
+
+.references-pause .icone-lecture { display: none; }
+
+.references.en-pause .references-pause .icone-pause { display: none; }
+
+.references.en-pause .references-pause .icone-lecture { display: block; }
+
+@media (max-width: 720px) {
+  .references-defile {
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+  }
+  .references-piste { animation-duration: 40s; }
+  .references-logos li { height: 56px; padding-inline: 18px; }
+  .references-logos img { max-height: 44px; max-width: 104px; }
+  .references-logos img.large { max-width: 118px; max-height: 34px; }
+  .references-logos img.compact { max-height: 30px; }
+}
+
+/* Mouvement réduit : grille fixe, sans copie ni bouton */
+@media (prefers-reduced-motion: reduce) {
+  .references-defile { -webkit-mask-image: none; mask-image: none; margin-inline: 0; }
+  .references-piste { animation: none; width: auto; }
+  .references-logos { flex-wrap: wrap; justify-content: center; flex: 1; row-gap: 12px; }
+  .references-logos[aria-hidden="true"], .references-pause { display: none; }
+}
+
 /* ---------- Sections ---------- */
 section { padding: clamp(76px, 11vh, 128px) 0; }
 
@@ -370,6 +496,34 @@ section { padding: clamp(76px, 11vh, 128px) 0; }
 }
 
 .note-financement strong { color: var(--vert-eclat); }
+
+.partenaire {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--trait-sombre);
+}
+
+.partenaire-logo {
+  flex: none;
+  background: var(--blanc);
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+
+.partenaire-logo img { display: block; height: 34px; width: auto; }
+
+.partenaire p { font-size: 0.98rem; }
+
+.partenaire a { color: var(--blanc); font-weight: 700; text-decoration: none; border-bottom: 2px solid var(--vert-eclat); padding-bottom: 1px; white-space: nowrap; }
+
+.partenaire a:hover { color: var(--vert-eclat); }
+
+@media (max-width: 720px) {
+  .partenaire { flex-direction: column; align-items: flex-start; gap: 14px; }
+}
 
 /* ---------- Prix ---------- */
 .prix { background: var(--blanc); }
@@ -707,6 +861,47 @@ footer a:hover { color: var(--vert-eclat); }
   </div>
 </div>
 
+<section class="references" aria-labelledby="references-titre">
+  <div class="conteneur">
+    <h2 id="references-titre" class="references-titre">Ils ont formé ou accompagné leurs équipes avec nous</h2>
+    <div class="references-defile" id="references-defile">
+      <div class="references-piste">
+        <ul class="references-logos">
+        <li><img src="logos/fff.svg" alt="Fédération française de football"></li>
+        <li><img src="logos/stade-toulousain.svg" alt="Stade Toulousain"></li>
+        <li><img src="logos/lnh.svg" alt="Ligue nationale de handball"></li>
+        <li><img src="logos/lnb.svg" alt="Ligue nationale de basket"></li>
+        <li><img src="logos/usl-dunkerque.svg" alt="USL Dunkerque"></li>
+        <li><img src="logos/ffgym.png" alt="Fédération française de gymnastique" class="large"></li>
+        <li><img src="logos/ligue-rugby-bfc.png" alt="Ligue Bourgogne-Franche-Comté de rugby" class="large"></li>
+        <li><img src="logos/oc-sport.png" alt="OC Sport" class="compact"></li>
+        <li><img src="logos/sporsora.png" alt="Sporsora" class="large inverse"></li>
+        <li><img src="logos/cosmos.svg" alt="COSMOS" class="large"></li>
+        <li><img src="logos/spartner-travel.svg" alt="Spartner Travel" class="large inverse"></li>
+        </ul>
+        <ul class="references-logos" aria-hidden="true">
+        <li><img src="logos/fff.svg" alt=""></li>
+        <li><img src="logos/stade-toulousain.svg" alt=""></li>
+        <li><img src="logos/lnh.svg" alt=""></li>
+        <li><img src="logos/lnb.svg" alt=""></li>
+        <li><img src="logos/usl-dunkerque.svg" alt=""></li>
+        <li><img src="logos/ffgym.png" alt="" class="large"></li>
+        <li><img src="logos/ligue-rugby-bfc.png" alt="" class="large"></li>
+        <li><img src="logos/oc-sport.png" alt="" class="compact"></li>
+        <li><img src="logos/sporsora.png" alt="" class="large inverse"></li>
+        <li><img src="logos/cosmos.svg" alt="" class="large"></li>
+        <li><img src="logos/spartner-travel.svg" alt="" class="large inverse"></li>
+        </ul>
+      </div>
+    </div>
+    <button class="references-pause" type="button" aria-controls="references-defile" aria-pressed="false">
+      <svg class="icone-pause" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="2.5" width="3" height="11" rx="1"/><rect x="9.5" y="2.5" width="3" height="11" rx="1"/></svg>
+      <svg class="icone-lecture" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 2.8v10.4a.8.8 0 0 0 1.2.7l8.3-5.2a.8.8 0 0 0 0-1.4L5.7 2.1a.8.8 0 0 0-1.2.7z"/></svg>
+      <span class="references-pause-libelle">Mettre en pause le défilement</span>
+    </button>
+  </div>
+</section>
+
 <section class="finalite" id="finalite">
   <div class="conteneur">
     <div class="revele">
@@ -756,7 +951,13 @@ footer a:hover { color: var(--vert-eclat); }
         <p>En deux volets selon les profils : prise en main des outils IA généralistes pour tous, approfondissement pour un petit groupe qui apprend à encapsuler lui-même ses process.</p>
       </article>
     </div>
-    <p class="note-financement revele"><strong>Un déploiement finançable.</strong> Le diagnostic et la formation peuvent être pris en charge par des dispositifs publics et votre budget formation, ce qui réduit fortement votre reste à charge.</p>
+    <div class="note-financement revele">
+      <p><strong>Un déploiement finançable.</strong> Le diagnostic et la formation peuvent être pris en charge par des dispositifs publics et votre budget formation, ce qui réduit fortement votre reste à charge.</p>
+      <div class="partenaire">
+        <span class="partenaire-logo"><img src="logos/fyve-akademy.png" alt="Fyve Akademy"></span>
+        <p>Nos formations sont portées par notre partenaire <strong>Fyve Akademy</strong>, organisme de formation certifié Qualiopi : elles peuvent être prises en charge par votre OPCO. <a href="https://fyve.fr/former-mes-equipes/ia/" target="_blank" rel="noopener">Découvrir Fyve Akademy</a></p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -858,6 +1059,7 @@ footer a:hover { color: var(--vert-eclat); }
 <footer>
   <div class="conteneur">
     <span>Edmo · L'IA orchestrée pour le sport et l'entertainment</span>
+    <span>Formations en partenariat avec <a href="https://fyve.fr/former-mes-equipes/ia/" target="_blank" rel="noopener">Fyve Akademy</a></span>
     <a href="mailto:jbdurand@edmo.fr">jbdurand@edmo.fr</a>
   </div>
 </footer>
@@ -883,6 +1085,26 @@ document.getElementById('formulaire').addEventListener('submit', function (e) {
   window.location.href = 'mailto:jbdurand@edmo.fr?subject=' + sujet + '&body=' + corps;
   document.getElementById('confirmation').classList.add('visible');
 });
+</script>
+
+<script>
+// Bandeau de références : pause manuelle et arrêt hors écran
+(function () {
+  var section = document.querySelector('.references');
+  var bouton = section && section.querySelector('.references-pause');
+  if (!bouton) return;
+  var libelle = bouton.querySelector('.references-pause-libelle');
+  bouton.addEventListener('click', function () {
+    var pause = section.classList.toggle('en-pause');
+    bouton.setAttribute('aria-pressed', pause ? 'true' : 'false');
+    libelle.textContent = pause ? 'Reprendre le défilement' : 'Mettre en pause le défilement';
+  });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entrees) {
+      section.classList.toggle('hors-champ', !entrees[0].isIntersecting);
+    }).observe(section);
+  }
+})();
 </script>
 
 <script src="agent-test.js" defer></script>
