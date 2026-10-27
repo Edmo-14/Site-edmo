@@ -1,5 +1,5 @@
 // Données de la Carte IA du Sport — généré, ne pas éditer à la main.
-// Source : librairie-skills-sport (cas observés en formation, anonymisés).
+// Source : librairie-skills-sport (cas observés lors de formations ou de déploiements, anonymisés).
 window.TAXONOMIE = {
  "services": [
   [
@@ -166,7 +166,7 @@ window.CAS = [
   ],
   "preuve": "eprouve",
   "douleur": "Les mêmes questions remontent en boucle du terrain vers vos équipes : une fédération nationale gère un réseau d'environ 1 400 clubs, une autre traite près de 4 000 questions juridiques par an — chacune une par une.",
-  "gain": "L'assistant répond instantanément aux questions de premier niveau en citant ses sources — vos équipes ne traitent plus que les cas complexes.",
+  "gain": "L'assistant répond instantanément aux questions de premier niveau en citant ses sources — vos équipes ne traitent plus que les cas complexes. Dans une ligue professionnelle, un premier assistant fiable à environ 80 % satisfaisait déjà les clubs ; 50 à 60 % des questions basiques semblent absorbables.",
   "prompt": "Dispositif : constituer une base de connaissances à partir des règlements, des FAQ existantes et des réponses déjà envoyées au réseau, puis la connecter à un assistant IA accessible aux clubs. L'assistant répond aux questions de premier niveau en citant ses sources et transmet aux équipes celles qui sortent de son périmètre. Le journal des questions posées alimente la mise à jour de la base et révèle les sujets qui méritent une communication proactive.",
   "process": [
    "Constituer la base de connaissances (règlements, FAQ existantes, réponses déjà envoyées)",
@@ -175,7 +175,7 @@ window.CAS = [
    "Transmettre aux équipes les questions hors périmètre",
    "Mettre à jour la base à partir du journal des questions posées"
   ],
-  "conseil": "Commencer par les vingt questions les plus fréquentes et garder un humain dans la boucle sur les réponses à portée juridique.",
+  "conseil": "Commencer par les vingt questions les plus fréquentes, prévoir quelqu'un pour actualiser et vérifier la base dans la durée, et garder un humain sur les réponses à portée juridique comme sur le cas particulier de chaque club.",
   "skill": null
  },
  {
@@ -320,7 +320,7 @@ window.CAS = [
    "Collecter les sources et rédiger le brief : le fait, pourquoi c'est important, l'action éventuelle",
    "Envoyer le brief chaque matin par mail"
   ],
-  "conseil": "Commencer par la version simple (tâche planifiée dans ChatGPT) avant d'investir dans une automatisation complète.",
+  "conseil": "Commencer par la version simple (tâche planifiée dans ChatGPT) avant d'investir dans une automatisation complète. Variante : une veille tous les quinze jours ciblée sur les projets de stades et de salles, pour capter tôt les projets à six mois, un an ou cinq ans et solliciter des prises de contact.",
   "skill": null
  },
  {
@@ -338,9 +338,9 @@ window.CAS = [
   ],
   "preuve": "eprouve",
   "douleur": "Après chaque comité directeur ou bureau, vous passez votre soirée à transformer des notes éparses en compte rendu — ou vous laissez un transcript brut de trente pages que personne ne relira. C'est le besoin numéro un remonté dans toutes les structures, du club omnisports à la fédération nationale.",
-  "gain": "L'IA produit un CR structuré — décisions, actions, échéances — en dix minutes ; vous relisez au lieu de rédiger pendant deux heures.",
+  "gain": "L'IA produit un CR structuré — décisions, actions, échéances — en dix minutes ; vous relisez au lieu de rédiger. Dans une ligue professionnelle, le CR d'une commission demandait environ une journée, celui d'un comité directeur deux à trois jours, relecture en plus.",
   "prompt": "Voici la transcription de notre réunion de [instance : comité directeur, bureau, AG] du [date]. Rédige un compte rendu structuré : décisions prises, actions par personne avec échéance, points en suspens à remettre à l'ordre du jour. Ton neutre et factuel, une page maximum.",
-  "conseil": "Enregistrer et transcrire la réunion plutôt que de partir de notes éparses, et fournir la liste des participants : c'est ce qui permet d'attribuer correctement décisions et actions à chacun.",
+  "conseil": "Enregistrer et transcrire la réunion plutôt que de partir de notes éparses, et fournir la liste des participants : c'est ce qui permet d'attribuer correctement décisions et actions à chacun. Écueil vécu : un CR généré automatiquement est parti à tous avec des propos attribués aux mauvais participants ; vérifier l'attribution des propos avant toute diffusion.",
   "skill": null
  },
  {
@@ -440,13 +440,13 @@ window.CAS = [
   "douleur": "Vous tapez lentement au clavier et vous repoussez les petites tâches d'écriture : le mail qu'on remet à plus tard, la note qu'on ne prend jamais.",
   "gain": "Vous parlez deux minutes, l'IA restructure en texte propre — vous relisez et envoyez. En formation, c'est l'usage à l'effet le plus immédiat, tous profils confondus.",
   "prompt": "Je vais te dicter [un mail / une note / une demande] en vrac. Restructure mes propos en un texte clair et bien organisé : supprime les répétitions et les hésitations, garde mon vocabulaire, et signale-moi ce qui semble manquer avant de finaliser. Voici la dictée : [dicter avec le micro].",
-  "conseil": "Le micro est disponible dans les applications mobiles ChatGPT et Copilot : dicter en vrac sans se soucier de la forme, c'est le travail de l'IA.",
+  "conseil": "Le micro est disponible dans les applications mobiles ChatGPT et Copilot : dicter en vrac sans se soucier de la forme, c'est le travail de l'IA. Variante : donner à l'IA le document Word existant et lui dicter à l'oral toutes les modifications à apporter, au lieu de les reporter à la main.",
   "skill": null
  },
  {
   "id": "projet-chatgpt-mission-recurrente",
   "titre": "Créer un projet ChatGPT qui garde le contexte d'une mission récurrente",
-  "service": "direction",
+  "service": "marcom",
   "besoin": "assistants",
   "faisabilite": "moyen",
   "portee": "transversal",
@@ -532,7 +532,7 @@ window.CAS = [
   ],
   "preuve": "teste",
   "douleur": "Des données publiques précieuses — calendriers d'autres compétitions, dispositifs d'aides, appels à projets — se consultent site par site : la collecte manuelle est si lourde qu'elle ne se fait pas, et des opportunités vous passent sous le nez.",
-  "gain": "Le dispositif collecte automatiquement les sources utiles et vous livre chaque semaine la synthèse des nouveautés classée par priorité — vous ne traitez plus que les opportunités.",
+  "gain": "Le dispositif collecte automatiquement les sources utiles et vous livre la synthèse des nouveautés classée par priorité, chaque semaine ou chaque matin par mail (par exemple les appels d'offres publics du sport parus la veille) — vous ne traitez plus que les opportunités.",
   "prompt": "Dispositif : un workflow planifié (n8n ou équivalent) qui parcourt les sources définies [lister : sites institutionnels des aides, calendriers de compétitions, plateformes d'appels à projets], extrait les contenus nouveaux depuis le dernier passage, et les passe à l'IA avec la consigne : « Filtre les éléments pertinents pour [notre structure : critères], résume chacun (dispositif, montant, échéance, lien), classe par priorité. » La synthèse part par mail chaque [semaine] à [destinataires].",
   "process": [
    "Lister les sources publiques à surveiller (sites d'aides, calendriers de compétitions, plateformes d'appels à projets)",
@@ -541,7 +541,7 @@ window.CAS = [
    "Faire filtrer et résumer chaque élément par l'IA (dispositif, montant, échéance, lien) selon les critères de la structure",
    "Envoyer la synthèse classée par priorité aux destinataires à la fréquence choisie"
   ],
-  "conseil": "Respecter les conditions d'utilisation des sites sources et privilégier les flux et API publics quand ils existent : le scraping sauvage se paie en blocages.",
+  "conseil": "Respecter les conditions d'utilisation des sites sources et privilégier les flux et API publics quand ils existent : le scraping sauvage se paie en blocages. Écueil : la collecte bute sur les sites à espace connecté, alors que la mise en tableau Excel et le résumé Word se font simplement ; automatiser d'abord cette seconde partie plutôt que d'écarter le cas.",
   "skill": null
  },
  {
@@ -630,7 +630,7 @@ window.CAS = [
   "douleur": "Chaque enquête ou inscription passe par un formulaire monté à la main, question par question. Un travail de clic répétitif — et des formulaires mal structurés qui produisent des données inexploitables à l'arrivée.",
   "gain": "L'IA génère le formulaire complet depuis la description de votre besoin, pensé pour l'exploitation des données — vous n'avez plus qu'à vérifier et diffuser.",
   "prompt": "Génère un formulaire pour [besoin : inscription à un événement, enquête clubs, recensement de bénévoles] : décris d'abord la structure optimale (sections, questions, types de réponses) en pensant à l'exploitation des données : choix fermés plutôt que texte libre partout où c'est possible, formats normalisés (dates, téléphones), champs obligatoires justifiés, logique conditionnelle si besoin. Puis génère le formulaire via Gemini dans Google Forms [ou fournis la structure à recopier]. Ajoute le message de confirmation et les règles de diffusion.",
-  "conseil": "Penser l'exploitation avant la collecte : chaque question en texte libre est une heure de nettoyage de données plus tard.",
+  "conseil": "Penser l'exploitation avant la collecte : chaque question en texte libre est une heure de nettoyage de données plus tard. Écueil : l'IA tend à ne proposer que des questions à choix multiples ; lui demander de varier les types de réponse selon l'usage prévu de chaque question.",
   "skill": null
  },
  {
@@ -1468,7 +1468,7 @@ window.CAS = [
   "douleur": "Chaque jour ou chaque semaine, vous lisez, triez et résumez des dizaines d'articles avant de diffuser la revue de presse en interne. Des heures de lecture pour quelques lignes de synthèse.",
   "gain": "L'IA produit une synthèse hiérarchisée des retombées en quelques minutes — vous n'avez plus qu'à la relire avant diffusion.",
   "prompt": "Voici les articles parus sur [la structure] depuis [période] : [coller le texte des articles]. Produis une revue de presse : synthèse générale en 5 lignes, puis pour chaque article le média, l'angle, la tonalité (positive, neutre, négative) et une citation marquante. Termine par les 3 points d'attention à signaler à la direction.",
-  "conseil": "Coller le texte des articles plutôt que les seuls liens : les outils n'accèdent pas toujours au contenu derrière un lien.",
+  "conseil": "Coller le texte des articles plutôt que les seuls liens : les outils n'accèdent pas toujours au contenu derrière un lien. Pour aller plus loin, un agent peut lire vos abonnements presse en PDF et vos newsletters, trier ce qui vous intéresse et le résumer, à la place de la revue de presse hebdomadaire d'un prestataire.",
   "skill": null
  },
  {
@@ -1544,7 +1544,7 @@ window.CAS = [
   "douleur": "Votre projet d'espace fan ou de site événementiel présenté en cahier des charges texte convainc rarement les instances, et une maquette d'agence coûte cher et prend des semaines.",
   "gain": "L'IA génère une maquette interactive et cliquable en une heure — vous la montrez en réunion avant d'engager le moindre développement.",
   "prompt": "Maquette un espace fan pour [notre ligue / notre club] : page d'accueil avec les prochains matchs, classement, programme de fidélité à points, boutique et accès billetterie. Génère une maquette HTML interactive et cliquable, aux couleurs [couleurs de la structure], consultable sur mobile. Je veux pouvoir la présenter en réunion pour faire valider le concept.",
-  "conseil": "La maquette sert à valider le concept et aligner les décideurs, pas à remplacer le développement final.",
+  "conseil": "La maquette sert à valider le concept et aligner les décideurs, pas à remplacer le développement final. Variante : pour refaire un site, partir du lien du site existant et de quelques consignes ; la maquette obtenue permet d'étudier le parcours et remplace le cahier des charges et les spécifications envoyés au prestataire.",
   "skill": null
  },
  {
@@ -1929,7 +1929,7 @@ window.CAS = [
   "douleur": "Vos exports de ventes s'accumulent dans Excel, mais personne n'a le temps d'en tirer des enseignements : le reporting se limite à un chiffre d'affaires global, sans plan d'action derrière.",
   "gain": "L'IA lit tout le fichier de ventes et vous propose cinq actions priorisées — vous arbitrez en une seule session de travail.",
   "prompt": "Voici l'export Excel des ventes de la boutique sur [période]. Analyse : meilleures et pires ventes par catégorie, évolution par rapport à [période précédente], panier moyen, effet des [matchs, résultats, lancements de collection]. Termine par un plan d'action de 5 mesures priorisées avec, pour chacune, l'indicateur qui permettra de vérifier son effet.",
-  "conseil": "Supprimer les colonnes contenant des données clients (noms, mails) de l'export avant de le charger dans l'outil (vigilance données personnelles).",
+  "conseil": "Supprimer les colonnes contenant des données clients (noms, mails) de l'export avant de le charger dans l'outil (vigilance données personnelles). Variante : partir du rapport de caisse d'un soir de match (ventes par produit, catégorie, moyen de paiement, point de vente du stade, heure) et demander l'activation à mener pour vendre davantage au match suivant.",
   "skill": null
  },
  {
@@ -2032,7 +2032,7 @@ window.CAS = [
   "douleur": "Chaque nouveau produit exige packshot propre, bannière et visuel porté : un shooting par collection coûte cher, et entre deux shootings les nouveautés arrivent en boutique avec des photos amateurs qui vendent mal.",
   "gain": "L'IA produit des visuels e-commerce professionnels — fond propre, mise en situation, bannières — à partir de simples photos produit ; vous contrôlez logos et couleurs avant mise en ligne.",
   "prompt": "À partir de cette photo produit [photo simple du produit], produis les visuels e-commerce : 1) packshot sur fond neutre uniforme, ombres douces, produit centré, 2) mise en situation portée [profil du mannequin : supporter en contexte stade, lifestyle urbain] avec le produit strictement identique à l'original (couleurs, logos, coupe), 3) bannière promotionnelle [format] avec accroche [texte]. Rendu photographique cohérent avec une boutique officielle.",
-  "conseil": "Contrôler chaque visuel généré : logos et sponsors sur le produit doivent rester exacts, c'est le point où l'IA se trompe le plus.",
+  "conseil": "Contrôler chaque visuel généré : logos et sponsors doivent rester exacts, c'est là que l'IA se trompe le plus, surtout sur un logo très détaillé qui oblige à relancer. Astuce : fournir une image d'inspiration avec la photo du produit et demander de refaire la même mise en scène, produit par produit.",
   "skill": null
  },
  {
@@ -2089,7 +2089,7 @@ window.CAS = [
   "douleur": "Chaque semaine, vous transformez les données brutes de ventes en reporting pour la direction : extraction, tableaux croisés, graphiques, commentaires. Un rituel de plusieurs heures qui ne laisse plus de place à l'analyse.",
   "gain": "L'IA met en forme et commente le reporting hebdomadaire en quelques minutes — vous passez le temps gagné sur l'action commerciale.",
   "prompt": "Voici l'export brut des ventes de la semaine [coller : date, canal, référence, quantité, montant]. Produis le reporting hebdomadaire au format habituel : chiffre d'affaires par canal vs semaine précédente et vs même semaine N-1, top 10 des références, faits marquants en 5 bullet points, et alertes (baisse anormale, rupture probable). Ton factuel, chiffres arrondis lisibles, prêt à envoyer à la direction.",
-  "conseil": "Donner à l'IA un exemple du reporting habituel la première fois : elle en reproduit la structure et le niveau de détail attendus.",
+  "conseil": "Donner à l'IA un exemple du reporting habituel la première fois : elle en reproduit la structure et le niveau de détail. Variante : le récap mensuel par produit, taille, coloris et point de vente à partir d'exports hétérogènes (boutique en ligne, caisse du stade, PDF d'une boutique physique), encapsulé pour être relancé chaque mois sans tout réexpliquer.",
   "skill": null
  },
  {
@@ -3249,7 +3249,7 @@ window.CAS = [
   ],
   "preuve": "eprouve",
   "douleur": "Vos instances produisent un flux continu de PV, relevés de décisions et courriers de réponse aux clubs : une charge rédactionnelle normée qui occupe les juristes au détriment de l'instruction des dossiers.",
-  "gain": "L'IA produit PV et relevés en quelques minutes après chaque séance, et des projets de réponse cohérents avec vos précédents — vous relisez et signez.",
+  "gain": "L'IA produit PV et relevés juste après chaque séance, et des projets de réponse cohérents avec vos précédents — vous relisez et signez. Dans une ligue, le PV qui demandait une demi-journée de rédaction se fait désormais en une vingtaine de minutes.",
   "prompt": "Voici mes notes (ou la transcription) de la séance de [instance] du [date] : [coller]. Rédige : 1) le PV au format réglementaire [coller un PV précédent comme modèle] : présents, ordre du jour, débats résumés objectivement, décisions avec votes ; 2) le relevé de décisions diffusable : décisions numérotées, responsables, échéances ; 3) pour chaque demande de club traitée, le projet de réponse aligné sur nos réponses précédentes dans des cas similaires [coller 2-3 exemples].",
   "conseil": "Constituer une bibliothèque des réponses passées par type de demande : la cohérence des positions dans le temps est un enjeu juridique, pas seulement rédactionnel.",
   "skill": null
@@ -3391,7 +3391,7 @@ window.CAS = [
   ],
   "preuve": "eprouve",
   "douleur": "Votre projet d'académie ou de nouvelle section attend son business plan depuis des mois : personne en interne n'a le temps ni le réflexe de structurer hypothèses, coûts et revenus dans un document présentable.",
-  "gain": "L'IA structure le business plan complet avec les hypothèses à documenter — vous transformez une idée en dossier présentable aux instances.",
+  "gain": "L'IA structure le business plan complet avec les hypothèses à documenter — vous transformez une idée en dossier présentable aux instances. Variante : avec un assistant dédié, refondre en série les business plans de matchs délocalisés ou d'événements d'entreprise (séminaires, conventions dans un stade) ; dans le cas observé, 17 business plans ont été refondus en 15 jours après le retrait d'un financeur.",
   "prompt": "Je veux construire le business plan d'une [académie de jeunes joueurs / école de sport / nouvelle section] pour notre [type de structure]. Pose-moi d'abord les questions nécessaires (capacité, encadrement, tarifs, locaux, subventions), puis structure le business plan : investissements, charges, revenus sur 3 ans, seuil d'équilibre, risques. Distingue mes données réelles de tes hypothèses, à vérifier.",
   "conseil": "Faire distinguer les données réelles des hypothèses de l'IA : ce sont les hypothèses qu'il faut documenter avant de présenter aux instances.",
   "skill": null
@@ -4208,7 +4208,7 @@ window.CAS = [
   "douleur": "Une fois le contrat de partenariat signé, les contreparties dues au partenaire et les actions à mener n'y sont pas toujours explicites : visibilité, hospitalités, activations, échéances de paiement. Vous les extrayez et les résumez à la main, avec le risque d'oublier une donnée clé.",
   "gain": "L'IA remplit votre fiche de synthèse standard du partenariat et en déduit un plan d'action daté sur la saison, chaque ligne avec son article d'origine : vous désignez les responsables et diffusez aux équipes.",
   "prompt": "Voici le contrat de partenariat signé avec [partenaire] pour [saison ou durée] et notre modèle de fiche de synthèse. Remplis la fiche (montants et échéances de paiement, dates, contreparties dues : visibilité, hospitalités, places, activations, engagements, clauses critiques), puis transforme les obligations de chaque partie en plan d'action daté : action, échéance (date ou match), article de référence. Signale tout champ introuvable.",
-  "conseil": "Fixer le modèle de fiche partenaire une fois pour toutes dans un projet dédié : chaque contrat de partenariat sort au même format.",
+  "conseil": "Fixer le modèle de fiche partenaire une fois pour toutes dans un projet dédié : chaque contrat de partenariat sort au même format. Variante : pour le contrat d'accueil d'un grand événement, l'interroger point par point (assurance, protection du marché, transport) : vous pourriez le relire trois fois au lieu de cinq.",
   "skill": null
  },
  {
@@ -4404,7 +4404,7 @@ window.CAS = [
   "douleur": "Vos procédures de prise de licence, de mutation ou d'organisation de match, et le mode d'emploi de vos outils métier, sont peu consultés et peu accessibles, ou ne sont écrits nulle part. Vos équipes ont du mal à y retrouver les étapes à suivre, et les nouveaux arrivants se forment sans documentation.",
   "gain": "L'assistant répond aux questions de l'équipe à partir de vos procédures, étape par étape, en citant le passage concerné : vous n'avez plus qu'à tenir vos procédures à jour.",
   "prompt": "Tu es l'assistant interne de [club, ligue, comité] pour [procédure ou outil métier : prise de licence, mutation, organisation de match, logiciel de billetterie]. Réponds aux questions de l'équipe et des nouveaux arrivants uniquement à partir des documents fournis ([procédures], [checklist]), étape par étape, en citant la section utilisée. Si la réponse n'y figure pas, dis-le.",
-  "conseil": "Rédiger d'abord les procédures avec l'IA et les mettre à jour à chaque cas nouveau : l'assistant ne vaut que ce que vaut sa documentation.",
+  "conseil": "Rédiger d'abord les procédures avec l'IA et les mettre à jour à chaque cas nouveau : l'assistant, y compris pour l'onboarding des nouveaux arrivants, ne vaut que ce que vaut sa documentation.",
   "skill": null
  },
  {
@@ -4522,7 +4522,7 @@ window.CAS = [
   "douleur": "Une bonne photo de votre dernier match a des couleurs qui ne collent pas à votre charte ou attend votre logo, et la retouche à la main est fastidieuse.",
   "gain": "L'IA corrige les couleurs ou ajoute le logo en quelques instructions ; vous n'avez plus qu'à valider le rendu.",
   "prompt": "Voici une photo de [match, joueur, action]. Retouche-la pour [usage : réseaux du club, affiche, site] : harmonise les couleurs avec [couleurs de la charte], ajoute [logo du club ou de la compétition] en [position]. Garde les visages, les maillots et les logos des partenaires intacts.",
-  "conseil": "Vérifier que la retouche ne modifie ni les visages ni les logos de partenaires, qui doivent rester exacts.",
+  "conseil": "Vérifier que la retouche ne modifie ni les visages ni les logos de partenaires, qui doivent rester exacts. Variante : l'IA intégrée à votre logiciel de retouche supprime aussi les éléments perturbateurs et le grain d'une photo de match.",
   "skill": null
  },
  {
@@ -4581,9 +4581,732 @@ window.CAS = [
    "Rassembler les documents de référence (conditions générales, FAQ, règlement intérieur, accès les jours de match)",
    "Lister les questions qui reviennent le plus souvent",
    "Configurer l'assistant pour répondre uniquement à partir des documents en citant la source",
+   "Brancher l'assistant sur l'outil de support client déjà utilisé plutôt que d'en construire un",
    "Mettre l'assistant à disposition des abonnés"
   ],
-  "conseil": "Commencer par les dix questions les plus fréquentes de la saison passée avant d'élargir le périmètre.",
+  "conseil": "Commencer par les dix questions les plus fréquentes de la saison passée avant d'élargir le périmètre. Variantes : l'étendre aux clients de vos boutiques en ligne, ou le préparer pour l'afflux de mails de supporters avant un grand match, que l'équipe ne peut plus traiter à la main.",
+  "skill": null
+ },
+ {
+  "id": "clauses-temps-de-jeu-elements-paie",
+  "titre": "Traduire les primes de temps de jeu et d'actions décisives en paie",
+  "service": "finance",
+  "besoin": "donnees",
+  "faisabilite": "moyen",
+  "portee": "sport",
+  "structures": [
+   "club"
+  ],
+  "preuve": "demande",
+  "douleur": "Suivre les clauses des contrats joueurs liées au temps de jeu et aux actions décisives, puis les décliner en éléments de paie, vous prend beaucoup de temps.",
+  "gain": "L'IA rapproche les clauses de chaque contrat des temps de jeu et des actions décisives de la période et prépare le tableau des éléments variables à transmettre à la paie : vous vérifiez avant transmission.",
+  "prompt": "Voici le tableau des clauses de nos joueurs sous contrat liées au temps de jeu et aux actions décisives [seuils, montants, périodes] et l'export des statistiques de la période [mois] : temps de jeu, [buts, essais, passes décisives]. Pour chaque joueur, indique les clauses déclenchées, le montant correspondant et la ligne du contrat qui le justifie. Présente le résultat en tableau prêt pour la paie, et signale les cas ambigus.",
+  "conseil": "Faire valider la première version du tableau des clauses par la personne qui gère les contrats : c'est lui que l'IA appliquera chaque mois.",
+  "skill": null
+ },
+ {
+  "id": "environnement-public-joueur-cible",
+  "titre": "Compiler les informations publiques sur l'environnement d'un joueur ciblé",
+  "service": "sportif",
+  "besoin": "veille",
+  "faisabilite": "moyen",
+  "portee": "sport",
+  "structures": [
+   "club"
+  ],
+  "preuve": "teste",
+  "douleur": "Vos rapports sur un joueur que vous ciblez s'en tiennent à ce qu'il fait sur le terrain : son environnement hors terrain n'y figure pas.",
+  "gain": "L'IA compile les informations publiques disponibles sur le joueur et les ajoute à son rapport, au format du club : vous jugez de leur fiabilité et de leur pertinence.",
+  "prompt": "Nous étudions le recrutement de [joueur, poste, club actuel]. Recherche les informations publiques sur son environnement hors terrain [presse, déclarations, réseaux sociaux officiels] sur les [période]. Classe-les par thème, donne la source et la date de chacune, et distingue les faits établis des rumeurs.",
+  "conseil": "S'en tenir aux sources publiques et vérifier chacune : les informations personnelles d'un joueur restent soumises au RGPD.",
+  "skill": null
+ },
+ {
+  "id": "prevention-blessures-donnees-gps",
+  "titre": "Croiser données GPS et suivi santé pour prévenir les blessures",
+  "service": "sportif",
+  "besoin": "analyse",
+  "faisabilite": "complexe",
+  "portee": "sport",
+  "structures": [
+   "club",
+   "ligue",
+   "federation"
+  ],
+  "preuve": "teste",
+  "douleur": "Vous disposez des données GPS et du suivi santé de vos joueurs, et vous voulez en tirer des préconisations de prévention des blessures.",
+  "gain": "Un dispositif centralise ces données et produit des préconisations de prévention des blessures à destination des clubs : le staff médical et sportif décide des mesures.",
+  "prompt": "Les données GPS et le dossier santé des joueurs sont centralisés dans un même outil. Un modèle analyse ces données pour produire des préconisations de prévention des blessures, que le staff médical et sportif valide avant toute mesure.",
+  "process": [
+   "Centraliser les données GPS et le dossier santé des joueurs",
+   "Faire analyser les données par le modèle",
+   "Produire les préconisations de prévention",
+   "Faire valider les mesures par le staff médical et sportif"
+  ],
+  "conseil": "Cadrer le projet avec le référent RGPD avant tout traitement : les données de santé des joueurs sont les plus protégées.",
+  "skill": null
+ },
+ {
+  "id": "varier-legendes-posts-instagram",
+  "titre": "Varier les légendes des photos publiées sur les réseaux du club",
+  "service": "marcom",
+  "besoin": "redaction",
+  "faisabilite": "facile",
+  "portee": "transversal",
+  "structures": [
+   "club",
+   "ligue",
+   "federation"
+  ],
+  "preuve": "teste",
+  "douleur": "Sous chaque photo d'entraînement ou de match, vous écrivez une phrase courte. Au fil de la saison, vous vous rendez compte que c'est toujours un peu la même chose.",
+  "gain": "L'IA vous propose plusieurs formulations courtes et différentes pour la même photo. Vous choisissez celle qui sonne juste et l'ajustez.",
+  "prompt": "Je publie sur [réseau] une photo de [sujet : entraînement, victoire, arrivée d'un joueur]. Contexte : [infos]. Propose 5 légendes de une phrase maximum, dans des registres différents (sobre, enthousiaste, humour), sans reprendre les formules suivantes déjà utilisées : [légendes récentes].",
+  "conseil": "Pour un format qui vous plaît chez un autre club, faire écrire à l'IA le prompt qui le reproduirait, puis l'adapter à votre club.",
+  "skill": null
+ },
+ {
+  "id": "maj-tableau-stock-merchandising",
+  "titre": "Mettre à jour le tableau de stock merchandising depuis les ventes du mois",
+  "service": "billetterie",
+  "besoin": "automatisation",
+  "faisabilite": "complexe",
+  "portee": "sport",
+  "structures": [
+   "club",
+   "salle"
+  ],
+  "preuve": "eprouve",
+  "douleur": "Chaque mois, vous reportez à la main les ventes de chaque produit, taille et point de vente dans votre tableau de stock. Vous n'êtes pas à l'abri de vous tromper de ligne et de noter des S dans la ligne M.",
+  "gain": "L'IA lit les rapports de ventes du mois et remplit elle-même les bonnes colonnes du tableau de stock partagé. Vous n'avez plus qu'à contrôler les totaux.",
+  "prompt": "L'IA est connectée à l'espace de stockage partagé où vit le tableau de stock. Un skill décrit le process : lire les exports de ventes de chaque point de vente, totaliser par produit, taille et coloris, puis reporter les quantités dans la colonne du mois de chaque gamme.",
+  "process": [
+   "Restructurer le tableau de stock en quelques onglets par gamme",
+   "Connecter l'IA à l'espace de stockage et au tableur partagés",
+   "Donner les exports de ventes du mois de chaque point de vente",
+   "Faire remplir la colonne du mois sur une copie du tableau",
+   "Contrôler les totaux puis figer le process dans un skill"
+  ],
+  "conseil": "Travailler d'abord sur une copie du tableau et demander une validation avant toute suppression de fichier.",
+  "skill": null
+ },
+ {
+  "id": "voix-off-annonce-joueur",
+  "titre": "Générer la voix off de la vidéo d'annonce d'un joueur",
+  "service": "marcom",
+  "besoin": "visuels",
+  "faisabilite": "facile",
+  "portee": "sport",
+  "structures": [
+   "club",
+   "ligue",
+   "federation"
+  ],
+  "preuve": "teste",
+  "douleur": "Pour annoncer l'arrivée d'un joueur en vidéo, il vous faut une voix off qui porte le texte d'annonce.",
+  "gain": "Un outil de voix IA lit votre texte d'annonce avec le ton choisi. Vous n'avez plus qu'à caler la voix sur le montage.",
+  "prompt": "Écris le texte de voix off (30 secondes maximum) de la vidéo d'annonce de [joueur], [poste], arrivé de [club précédent] pour [durée]. Ton : [épique / sobre]. Puis je le ferai lire par un outil de voix IA.",
+  "conseil": null,
+  "skill": null
+ },
+ {
+  "id": "animation-but-ecran-geant",
+  "titre": "Produire l'animation de but pour l'écran géant et les LED",
+  "service": "marcom",
+  "besoin": "visuels",
+  "faisabilite": "moyen",
+  "portee": "sport",
+  "structures": [
+   "club",
+   "salle"
+  ],
+  "preuve": "demande",
+  "douleur": "Vos animations de but, d'écran géant et de LED partent d'un template téléchargé que vous retouchez sans formation au motion design. Le rendu reprend la charte du club sans vraiment la respecter.",
+  "gain": "L'IA génère l'animation à partir de votre charte, de vos typos et du score. Vous la relisez et l'ajustez avant le match.",
+  "prompt": "Crée une animation de [durée] secondes au format [écran géant / bandeau LED] pour célébrer un but : nom du buteur [nom], score [score], couleurs et typographies de notre charte [éléments], style [sobre / explosif]. Prévois une version modifiable pour chaque buteur.",
+  "conseil": "Passer par un module de motion design installé dans l'assistant IA plutôt que de retoucher un template téléchargé.",
+  "skill": null
+ },
+ {
+  "id": "article-annonce-recrue",
+  "titre": "Rédiger l'article d'annonce d'une recrue pendant le mercato",
+  "service": "marcom",
+  "besoin": "redaction",
+  "faisabilite": "facile",
+  "portee": "sport",
+  "structures": [
+   "club"
+  ],
+  "preuve": "teste",
+  "douleur": "Au mercato, il faut publier vite un texte d'arrivée pour chaque recrue. Quand l'IA l'écrit, le texte sonne parfois trop artificiel.",
+  "gain": "L'IA met en ordre vos informations et vos traits de caractère du joueur dans un article prêt à relire. Vous n'avez plus qu'à l'humaniser et le valider.",
+  "prompt": "Tu rédiges pour le site du club. Rédige l'article d'annonce de [joueur], [poste], [âge], arrivé de [club précédent] pour [durée de contrat]. Points forts sur le terrain : [profil]. Traits humains : [éléments]. Ton chaleureux, sans formules toutes faites, [longueur] mots. Pose-moi d'abord les questions qui te manquent.",
+  "conseil": "Préciser que le club est la source officielle de l'information, sinon l'IA peut refuser d'écrire faute d'officialisation dans la presse.",
+  "skill": null
+ },
+ {
+  "id": "registre-echeances-contrats",
+  "titre": "Extraire échéances, paiements et clauses de sortie de tous ses contrats",
+  "service": "juridique",
+  "besoin": "documents-longs",
+  "faisabilite": "complexe",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "club"
+  ],
+  "preuve": "teste",
+  "douleur": "Savoir quels contrats de partenaires ou de prestataires s'arrêtent après une date donnée, avec quels termes de paiement et quelles clauses de sortie, suppose de relire chaque contrat du dossier partagé.",
+  "gain": "Un agent passe sur chaque contrat et en sort les termes de paiement, les clauses de résiliation, les échéances et les risques. Vos juristes lui fournissent les questions à poser, et vous partez de cette première lecture.",
+  "prompt": "Un agent IA connecté au dossier partagé des contrats lit chaque contrat et en extrait dans un tableau [échéance], [termes de paiement], [clauses de sortie] et [risques potentiels]. On l'interroge ensuite par question, par exemple : quels contrats s'arrêtent après le [date] ? Les juristes fournissent les questions à poser.",
+  "process": [
+   "Connecter l'agent au dossier partagé des contrats",
+   "Extraire pour chaque contrat échéance, paiement, clauses de sortie et risques",
+   "Faire préparer par les juristes les questions à poser à l'agent",
+   "Interroger le tableau par question, par exemple les contrats échus après une date"
+  ],
+  "conseil": "Tester plusieurs modèles sur la tâche : ils n'ont pas les mêmes forces sur le travail contractuel et sur l'analyse fine.",
+  "skill": null
+ },
+ {
+  "id": "analyse-prospections-gagnees-perdues",
+  "titre": "Analyser ses prospections partenaires gagnées et perdues",
+  "service": "commercial",
+  "besoin": "analyse",
+  "faisabilite": "facile",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "club"
+  ],
+  "preuve": "teste",
+  "douleur": "Vous avez la liste de vos prospects, celle de vos signatures et celle de vos refus avec ce qu'ils vous ont dit, mais rien ne vous montre où vous passez à côté d'opportunités.",
+  "gain": "L'IA croise les trois listes et pointe les opportunités manquées et les pistes pour améliorer votre prospection. Vous vous en servez comme base de réflexion, puis vous choisissez vos cibles.",
+  "prompt": "Voici trois listes de notre prospection partenaires : [prospects contactés], [partenaires signés], [refus avec leurs motifs]. Analyse ces données et dis-moi où je manque des opportunités et comment améliorer ma prospection. Présente chaque constat avec l'exemple de la liste qui l'appuie.",
+  "conseil": null,
+  "skill": null
+ },
+ {
+  "id": "espaces-partenaires-inexploites",
+  "titre": "Repérer dans son enceinte les espaces partenaires encore inexploités",
+  "service": "commercial",
+  "besoin": "analyse",
+  "faisabilite": "moyen",
+  "portee": "sport",
+  "structures": [
+   "club",
+   "ligue",
+   "salle"
+  ],
+  "preuve": "demande",
+  "douleur": "Vous ne savez pas quels espaces ou supports de votre enceinte vous ne valorisez pas encore auprès de vos partenaires.",
+  "gain": "À partir du plan de l'enceinte, de vos supports actuels et de la façon dont les matchs sont filmés, l'IA propose où se trouvent des opportunités. Vous vérifiez sur place et décidez ce que vous mettez en vente.",
+  "prompt": "Voici le plan de notre [stade ou salle], la liste des supports partenaires déjà vendus [liste] et la façon dont nos matchs sont diffusés [description de la captation]. Repère les emplacements ou supports que nous n'exploitons pas encore. Présente le résultat en tableau : emplacement, type de support, pourquoi c'est une opportunité.",
+  "conseil": null,
+  "skill": null
+ },
+ {
+  "id": "bons-commande-billets-partenaires",
+  "titre": "Pré-remplir les bons de commande de billets depuis la liste d'un partenaire",
+  "service": "billetterie",
+  "besoin": "automatisation",
+  "faisabilite": "complexe",
+  "portee": "sport",
+  "structures": [
+   "federation",
+   "ligue",
+   "club",
+   "salle"
+  ],
+  "preuve": "teste",
+  "douleur": "Un partenaire vous transmet la liste de ses clients qui veulent acheter des billets : chaque ligne doit être reportée dans le bon de commande du match.",
+  "gain": "L'IA transforme votre bon de commande en formulaire PDF à champs, avec un menu des matchs, puis fusionne les colonnes du fichier du partenaire dans ces champs. Il vous reste à contrôler les bons générés.",
+  "prompt": "Avec un assistant de code, on transforme le bon de commande billetterie en PDF à champs remplissables, avec la liste des [matchs] en menu. On fusionne ensuite le fichier Excel du [partenaire], colonne par colonne, dans ces champs pour produire un bon par client.",
+  "process": [
+   "Transformer le bon de commande en PDF à champs remplissables",
+   "Ajouter la liste des matchs en menu",
+   "Faire correspondre les colonnes du fichier du partenaire aux champs du bon",
+   "Générer un bon par client et les contrôler"
+  ],
+  "conseil": "Ne pas confier à un outil non couvert par un accord sur les données des informations sur les contrats, l'argent ou les déplacements de personnalités.",
+  "skill": null
+ },
+ {
+  "id": "suivi-realise-vs-previsionnel",
+  "titre": "Comparer chaque mois le réalisé financier au budget prévisionnel",
+  "service": "finance",
+  "besoin": "analyse",
+  "faisabilite": "moyen",
+  "portee": "transversal",
+  "structures": [
+   "club",
+   "ligue",
+   "federation",
+   "comite"
+  ],
+  "preuve": "teste",
+  "douleur": "Chaque mois, le point financier arrive par mail et vous devez rouvrir le budget prévisionnel pour savoir si vous êtes dans les clous.",
+  "gain": "L'IA, qui a le prévisionnel en mémoire, vous dit à chaque point mensuel où vous en êtes par rapport à ce qui était prévu : vous lisez l'écart sans aller rechercher le document, puis vous décidez.",
+  "prompt": "Voici notre budget prévisionnel de la saison [fichier] et le point financier du mois de [mois] envoyé par [service financier]. Compare le réalisé au prévisionnel poste par poste : écart en valeur et en pourcentage, postes en dérive, postes en avance. Termine par trois points d'attention pour la direction, une page maximum.",
+  "conseil": "Garder le budget prévisionnel dans un projet dédié pour ne pas le recharger chaque mois.",
+  "skill": null
+ },
+ {
+  "id": "dossier-pret-avocat",
+  "titre": "Préparer un dossier juridique complet avant de le confier à l'avocat",
+  "service": "juridique",
+  "besoin": "documents-longs",
+  "faisabilite": "moyen",
+  "portee": "transversal",
+  "structures": [
+   "club",
+   "ligue",
+   "federation",
+   "comite"
+  ],
+  "preuve": "teste",
+  "douleur": "Vous posez vos questions à l'avocat du club au fil des mails et c'est lui qui constitue le dossier, à l'heure.",
+  "gain": "L'IA vous aide à constituer un dossier complet, relu et vérifié, que l'avocat n'a plus qu'à valider : dans l'exemple raconté, 1 h 30 facturée au lieu de 10.",
+  "prompt": "Je dois soumettre à l'avocat du club un dossier sur [sujet : litige avec un prestataire, contrat de partenariat, situation d'un salarié]. Voici les pièces [documents] et le contexte [situation]. Liste les pièces manquantes, rédige une note de synthèse factuelle (faits, chronologie, questions précises à trancher) et signale les incohérences entre les pièces. Ton neutre, deux pages maximum.",
+  "conseil": "Demander à l'avocat de valider le dossier plutôt que de le construire : c'est la validation seule qui doit être facturée.",
+  "skill": null
+ },
+ {
+  "id": "situation-financiere-compta-banque",
+  "titre": "Relier comptabilité et banque à l'IA pour voir sa situation financière",
+  "service": "finance",
+  "besoin": "automatisation",
+  "faisabilite": "complexe",
+  "portee": "transversal",
+  "structures": [
+   "club",
+   "ligue",
+   "federation",
+   "comite"
+  ],
+  "preuve": "demande",
+  "douleur": "Le logiciel comptable et la banque du club ne sont pas reliés à l'IA : pour savoir où en sont les finances de la saison, vous allez chercher l'information vous-même.",
+  "gain": "Le dispositif relie l'IA à votre comptabilité et à votre banque et vous dit où vous en êtes financièrement : vous lisez la situation et vous décidez.",
+  "prompt": "Choisir d'abord les données comptables et bancaires que l'IA peut lire. Connecter l'IA au logiciel comptable et à la banque. Lui faire produire, à la demande, la situation financière à jour de la structure.",
+  "process": [
+   "Choisir les données comptables et bancaires que l'IA peut lire",
+   "Connecter l'IA au logiciel comptable",
+   "Connecter l'IA à la banque",
+   "Faire produire la situation financière à jour",
+   "Lire la situation et décider"
+  ],
+  "conseil": "Décider en amont ce que l'IA peut lire des comptes : la personne interrogée avait choisi de tenir sa banque à l'écart.",
+  "skill": null
+ },
+ {
+  "id": "capture-vocale-suivi-projet",
+  "titre": "Centraliser les vocaux de l'équipe dans le suivi d'un projet",
+  "service": "direction",
+  "besoin": "automatisation",
+  "faisabilite": "complexe",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "club",
+   "comite"
+  ],
+  "preuve": "teste",
+  "douleur": "Quand la personne rigoureuse de l'équipe n'est pas là pour structurer, par exemple sur le déplacement d'une sélection ou d'une équipe, chacun fait son suivi dans son coin. Pour chaque idée ou question, vous devez écrire un mail ou la noter pour plus tard.",
+  "gain": "Le bot range chaque vocal dans le bon dossier de projet, ou dans une boîte d'entrée datée s'il ne reconnaît pas le sujet, et vous envoie chaque jour la synthèse des questions reçues ; il vous reste à y répondre.",
+  "prompt": "Un bot de messagerie reçoit les vocaux des membres autorisés de l'équipe. Ses instructions lui décrivent son rôle et les projets en cours du club ou de la ligue (déplacement, événement, saison) : il range chaque message dans le projet concerné, ou dans une boîte d'entrée s'il ne sait pas, puis produit une synthèse quotidienne des questions à traiter.",
+  "process": [
+   "Créer un bot de messagerie réservé aux membres autorisés de l'équipe",
+   "Décrire dans ses instructions son rôle et les projets en cours",
+   "Ranger chaque vocal dans le projet reconnu, sinon dans une boîte d'entrée datée",
+   "Envoyer chaque jour la synthèse des questions reçues",
+   "Répondre aux questions et compléter le suivi du projet"
+  ],
+  "conseil": "Un bot par usage, et une demi-journée au calme pour le mettre en place : ça ne se configure pas entre deux réunions.",
+  "skill": null
+ },
+ {
+  "id": "presentation-charte-graphique",
+  "titre": "Remettre une présentation à la charte graphique de sa structure",
+  "service": "marcom",
+  "besoin": "templates",
+  "faisabilite": "facile",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "club",
+   "comite"
+  ],
+  "preuve": "teste",
+  "douleur": "Pour qu'une présentation destinée à vos partenaires ou à vos instances respecte la charte du club, vous devez la reprendre au masque, aux polices et aux couleurs.",
+  "gain": "L'IA refait la présentation à la charte du club à partir de simples captures de vos slides : vous vérifiez le rendu et exportez.",
+  "prompt": "Voici des captures de [nombre] slides de notre présentation [sujet, destinataire : partenaire, instance] et la charte graphique du club [logo, couleurs, polices]. Refais chaque slide au format PowerPoint en appliquant la charte, sans modifier le texte. Signale les slides dont la mise en page a dû changer.",
+  "conseil": "Les polices passent parfois mal dans le PowerPoint généré : exporter en PDF fige le rendu.",
+  "skill": null
+ },
+ {
+  "id": "comparer-solutions-logicielles",
+  "titre": "Comparer les outils du marché avant d'en équiper ses équipes ou ses clubs",
+  "service": "direction",
+  "besoin": "veille",
+  "faisabilite": "facile",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "club",
+   "comite"
+  ],
+  "preuve": "teste",
+  "douleur": "Avant d'acheter un outil pour vos équipes, vos bénévoles ou vos clubs, vous devez repérer les solutions du marché et estimer ce que chacune vous coûtera pour votre usage réel.",
+  "gain": "L'IA recense les solutions adaptées, avec leurs offres et un coût estimé selon votre volume d'usage : vous vérifiez les tarifs et testez la plus prometteuse.",
+  "prompt": "Fais une recherche sur les solutions de [type d'outil] pour [usage précis] au sein de [la structure / notre réseau de clubs], pour environ [nombre] utilisateurs. Recense les meilleures, avec pour chacune son fonctionnement, ses offres et un coût estimé pour notre volume d'usage. Privilégie la performance au prix et cite tes sources.",
+  "conseil": "Faire chiffrer le coût sur votre volume réel : un forfait en minutes ou en crédits s'épuise plus vite que prévu.",
+  "skill": null
+ },
+ {
+  "id": "integrer-module-site-structure",
+  "titre": "Intégrer un chatbot sur le site de sa structure avec l'IA",
+  "service": "marcom",
+  "besoin": "automatisation",
+  "faisabilite": "complexe",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "club",
+   "comite"
+  ],
+  "preuve": "teste",
+  "douleur": "Vous voulez ajouter un chatbot sur le site du club, sans savoir où le placer ni comment l'intégrer.",
+  "gain": "L'IA propose un emplacement, intègre le chatbot dans le code du site, le teste et le met en ligne : vous validez le rendu.",
+  "prompt": "Un assistant de code IA accède au dépôt du site. Vous lui décrivez le chatbot à ajouter et la page visée ; il propose l'emplacement, modifie le code, teste en local puis publie après votre accord.",
+  "process": [
+   "Décrire le chatbot et la page visée",
+   "Choisir l'emplacement proposé par l'IA",
+   "Faire intégrer le chatbot dans le code du site",
+   "Tester le rendu en local",
+   "Valider puis publier la modification"
+  ],
+  "conseil": "Vérifier que le chatbot ne s'affiche qu'à l'endroit prévu : un widget intégré peut rester visible sur toute la page.",
+  "skill": null
+ },
+ {
+  "id": "service-client-telephonique-pics",
+  "titre": "Automatiser le service client téléphonique pendant les pics de ventes",
+  "service": "billetterie",
+  "besoin": "automatisation",
+  "faisabilite": "complexe",
+  "portee": "transversal",
+  "structures": [
+   "club",
+   "salle"
+  ],
+  "preuve": "demande",
+  "douleur": "Lors d'une mise en vente au stade ou d'un pic de commandes sur la boutique en ligne, comme le Black Friday, votre service client doit gérer l'afflux d'appels.",
+  "gain": "Un agent vocal prend en charge les demandes courantes au téléphone pendant le rush : votre équipe traite les appels qu'il lui transfère.",
+  "prompt": "Un agent vocal branché sur la ligne du service client répond aux questions courantes (billetterie, commandes) à partir de vos FAQ et conditions de vente. Il transfère à un conseiller les demandes qu'il ne couvre pas, et s'active en priorité sur les périodes de rush.",
+  "process": [
+   "Recenser les questions courantes des périodes de rush",
+   "Constituer la base de réponses depuis les FAQ et conditions de vente",
+   "Paramétrer l'agent vocal sur la ligne du service client",
+   "Définir les règles de transfert vers un conseiller",
+   "Activer l'agent sur les périodes de forte activité"
+  ],
+  "conseil": null,
+  "skill": null
+ },
+ {
+  "id": "collecte-classement-factures",
+  "titre": "Récupérer les factures fournisseurs du club et les classer automatiquement",
+  "service": "finance",
+  "besoin": "automatisation",
+  "faisabilite": "complexe",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "club",
+   "comite"
+  ],
+  "preuve": "demande",
+  "douleur": "Vous allez chercher les factures de vos fournisseurs et prestataires là où elles arrivent pour les déposer dans le bon dossier du club.",
+  "gain": "Un petit robot récupère les factures à leur point d'arrivée et les dépose au bon endroit : vous n'avez plus qu'à contrôler le classement.",
+  "prompt": "Un skill relié à la boîte mail ou au dossier de réception récupère chaque nouvelle facture fournisseur et la dépose dans le dossier prévu selon vos règles de classement (saison, service, fournisseur).",
+  "process": [
+   "Définir les points d'arrivée des factures",
+   "Fixer les règles de classement",
+   "Paramétrer la récupération et le dépôt automatiques",
+   "Contrôler le classement"
+  ],
+  "conseil": null,
+  "skill": null
+ },
+ {
+  "id": "joueurs-fin-contrat-libres",
+  "titre": "Lister les joueurs libres sur le marché des transferts",
+  "service": "sportif",
+  "besoin": "veille",
+  "faisabilite": "moyen",
+  "portee": "sport",
+  "structures": [
+   "club"
+  ],
+  "preuve": "demande",
+  "douleur": "Pour faire votre veille, vous devez retrouver vous-même la liste des joueurs qui arrivent en fin de contrat et seront libres sur le marché des transferts.",
+  "gain": "L'IA vous sort la liste des joueurs en fin de contrat, libres sur le marché des transferts : vous vérifiez les dates.",
+  "prompt": "Voici [la source consultée : nos fichiers de suivi ou une liste publique]. Liste tous les joueurs dont le contrat arrive à échéance avant le [date] et qui seront libres sur le marché des transferts, avec leur poste, leur club actuel et la date de fin de contrat. Présente le résultat en tableau trié par date.",
+  "conseil": null,
+  "skill": null
+ },
+ {
+  "id": "designations-arbitres-match",
+  "titre": "Préparer les désignations d'arbitres d'un match",
+  "service": "sportif",
+  "besoin": "automatisation",
+  "faisabilite": "complexe",
+  "portee": "sport",
+  "structures": [
+   "federation",
+   "ligue"
+  ],
+  "preuve": "eprouve",
+  "douleur": "Vous voulez confier à l'IA une partie de la préparation des désignations d'arbitres, mais vous avez du mal à transposer votre façon de faire actuelle et vos logiciels.",
+  "gain": "Le dispositif relie l'IA aux logiciels que vous utilisez déjà et prend en charge les grosses étapes de la préparation : vous validez les désignations.",
+  "prompt": "Décrire d'abord, étape par étape, ce que vous faites pour préparer un match et placer les arbitres, et les logiciels utilisés. Connecter l'IA à ces logiciels par des connecteurs ; à défaut, lui faire piloter l'ordinateur. Automatiser ensuite, petit à petit, les étapes les plus lourdes.",
+  "process": [
+   "Décrire le déroulé de la préparation d'un match",
+   "Lister les logiciels utilisés à chaque étape",
+   "Connecter l'IA aux logiciels par des connecteurs",
+   "Faire piloter l'ordinateur par l'IA quand aucun connecteur n'existe",
+   "Automatiser progressivement les étapes les plus lourdes"
+  ],
+  "conseil": "Faire verbaliser le process par des questions sur la journée type avant de chercher l'outil.",
+  "skill": null
+ },
+ {
+  "id": "outil-suivi-athletes-ia",
+  "titre": "Créer soi-même un petit outil de suivi de ses athlètes avec l'IA",
+  "service": "sportif",
+  "besoin": "automatisation",
+  "faisabilite": "moyen",
+  "portee": "sport",
+  "structures": [
+   "ligue",
+   "comite",
+   "club",
+   "federation"
+  ],
+  "preuve": "teste",
+  "douleur": "Vous suivez vos athlètes avec les outils dont vous disposez, sans outil construit pour ce suivi.",
+  "gain": "L'IA génère un petit outil de suivi à partir de votre description en français ; il vous reste à le tester sur quelques athlètes et à demander les corrections.",
+  "prompt": "Je suis [fonction] dans [type de structure] et je suis [nombre] athlètes. Crée une page web simple pour suivre, pour chacun, [informations à suivre], avec ajout et modification des fiches et une vue d'ensemble. Explique-moi comment l'utiliser.",
+  "conseil": "Les données d'athlètes sont personnelles : décider dès le départ où l'outil et ses données seront stockés.",
+  "skill": null
+ },
+ {
+  "id": "audit-securite-application-site",
+  "titre": "Auditer la sécurité de la billetterie ou de l'espace licenciés avec l'IA",
+  "service": "marcom",
+  "besoin": "automatisation",
+  "faisabilite": "complexe",
+  "portee": "transversal",
+  "structures": [
+   "club",
+   "ligue",
+   "federation"
+  ],
+  "preuve": "teste",
+  "douleur": "Le test de sécurité de votre billetterie en ligne, de votre espace licenciés et de leur base de données passe par un prestataire, tous les un ou deux ans, pour un coût élevé.",
+  "gain": "Accompagné par l'IA, votre équipe technique passe en revue la sécurité de l'hébergement, de l'application et de la base de données point par point : elle corrige les failles relevées et décide de ce qui doit être validé par un expert.",
+  "prompt": "Un agent IA a accès en lecture à la configuration de l'hébergement, au code de l'application et à la base de données. Il déroule une grille de test de sécurité point par point, documente chaque faille avec son niveau de gravité, et l'équipe technique arbitre les corrections.",
+  "process": [
+   "Donner à l'agent un accès en lecture à l'hébergement, à l'application et à la base",
+   "Dérouler la grille de test de sécurité point par point",
+   "Documenter chaque faille avec son niveau de gravité",
+   "Arbitrer et corriger les failles avec l'équipe technique"
+  ],
+  "conseil": null,
+  "skill": null
+ },
+ {
+  "id": "bilan-club-export-adherents",
+  "titre": "Tirer le bilan du club de l'export adhérents et relancer les retards",
+  "service": "finance",
+  "besoin": "donnees",
+  "faisabilite": "moyen",
+  "portee": "sport",
+  "structures": [
+   "club",
+   "comite"
+  ],
+  "preuve": "eprouve",
+  "douleur": "Vous exportez de votre logiciel de gestion un gros fichier Excel d'adhérents et de finances, et il faut le dépouiller pour en tirer le bilan du club.",
+  "gain": "L'assistant produit un bilan dynamique, avec simulations, et repère les adhérents en retard de paiement, puis prépare dans vos brouillons les mails de relance : vous relisez avant d'envoyer.",
+  "prompt": "Voici l'export de notre logiciel de gestion [fichier Excel : adhérents, cotisations, paiements]. Produis le bilan du club : effectifs par catégorie, cotisations encaissées et attendues, évolution. Liste ensuite les adhérents en retard de paiement et rédige pour chacun un mail de relance courtois, à placer en brouillon.",
+  "conseil": "Préparer le bilan sous forme de procédure réutilisable (skill) pour l'appliquer à chaque nouvel export sans tout réexpliquer.",
+  "skill": null
+ },
+ {
+  "id": "planning-cours-affectation-entraineurs",
+  "titre": "Construire le planning des cours et l'affectation des entraîneurs",
+  "service": "sportif",
+  "besoin": "analyse",
+  "faisabilite": "moyen",
+  "portee": "sport",
+  "structures": [
+   "club",
+   "comite",
+   "ligue"
+  ],
+  "preuve": "demande",
+  "douleur": "Vous construisez à la main les emplois du temps de vos entraîneurs et leurs affectations aux groupes et aux créneaux.",
+  "gain": "L'IA propose un planning des cours et une affectation des entraîneurs à partir de vos créneaux, groupes et disponibilités ; vous vérifiez et ajustez.",
+  "prompt": "Voici nos créneaux de [terrains ou salles], nos groupes [âge, niveau, effectif] et les disponibilités de nos entraîneurs [nom, jours, diplôme]. Propose un planning hebdomadaire et une affectation des entraîneurs qui respecte ces contraintes. Présente-le en tableau par jour et signale les conflits ou créneaux non couverts.",
+  "conseil": null,
+  "skill": null
+ },
+ {
+  "id": "controle-fichier-resultats-jury",
+  "titre": "Contrôler le fichier de résultats d'un jury avant l'import des certifiés",
+  "service": "formation",
+  "besoin": "donnees",
+  "faisabilite": "moyen",
+  "portee": "transversal",
+  "structures": [
+   "federation"
+  ],
+  "preuve": "demande",
+  "douleur": "Après chaque jury, l'organisme de formation vous renvoie son fichier de résultats et vous le reprenez à la main : dates, codes commune, pays de naissance, listes déroulantes non respectées, blocs de compétences à reporter candidat par candidat. Selon l'organisme, cette reprise vous prend plus ou moins de temps, beaucoup quand les erreurs s'accumulent.",
+  "gain": "L'IA passe chaque colonne au crible de vos règles et vous rend la liste des anomalies avec la correction proposée : vous validez avant l'import.",
+  "prompt": "Voici le fichier de résultats du jury [diplôme, date du jury] envoyé par [organisme de formation] et nos règles de contrôle : [colonne et format attendu, par exemple sexe M ou F, date JJ/MM/AAAA, code commune à 5 chiffres, modalité d'accès choisie dans la liste]. Vérifie chaque ligne et rends un tableau des anomalies : ligne, colonne, valeur trouvée, correction proposée.",
+  "conseil": "Fournir à l'IA un fichier brut et le même fichier corrigé à la main pour qu'elle retrouve vos règles, et garder votre vérification tant que les premiers jurys n'ont pas confirmé sa fiabilité.",
+  "skill": null
+ },
+ {
+  "id": "suivi-annuel-certifies-par-diplome",
+  "titre": "Mettre à jour le nombre de certifiés par diplôme dans le suivi annuel",
+  "service": "formation",
+  "besoin": "donnees",
+  "faisabilite": "moyen",
+  "portee": "transversal",
+  "structures": [
+   "federation"
+  ],
+  "preuve": "demande",
+  "douleur": "Pour savoir combien de personnes vous avez certifiées dans l'année, vous reportez à la main, diplôme par diplôme, les totaux de votre fichier de suivi des jurys dans votre tableau des certifications.",
+  "gain": "L'IA rapproche les deux fichiers par numéro de diplôme et met à jour les totaux de l'année : vous ajoutez vous-même les nouveaux diplômes et leurs dates de validité.",
+  "prompt": "Voici notre fichier de suivi des jurys [année] et notre tableau des certifications. Pour chaque diplôme, retrouve par son [numéro RNCP ou code diplôme] le nombre de certifiés de l'année et reporte-le dans la colonne [année]. Liste à part les diplômes présents dans le suivi mais absents du tableau, sans les ajouter.",
+  "conseil": null,
+  "skill": null
+ },
+ {
+  "id": "parcours-formation-sur-mesure",
+  "titre": "Produire un parcours de formation adapté au programme d'une structure",
+  "service": "formation",
+  "besoin": "automatisation",
+  "faisabilite": "complexe",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue"
+  ],
+  "preuve": "teste",
+  "douleur": "Les clubs et comités à qui votre institut de formation propose ses modules (éducateurs, dirigeants bénévoles) veulent un contenu mieux ajusté à leur propre programme que votre catalogue.",
+  "gain": "Le dispositif étudie la structure, rédige le programme puis construit chaque unité avec textes, images, audio et vidéos : vous repérez les défauts et les faites corriger à l'itération suivante.",
+  "prompt": "Un système relie l'IA à un générateur d'images, à une synthèse vocale et à la recherche web (vidéos, articles). L'IA mène d'abord une recherche approfondie sur la structure cliente et ses programmes, rédige le programme du cours, puis construit toutes les unités. Chaque défaut repéré est corrigé à l'itération suivante.",
+  "process": [
+   "Rechercher le contexte et les programmes de la structure",
+   "Rédiger le programme du cours",
+   "Construire chaque unité avec textes, images, audio et vidéos",
+   "Relire les contenus et repérer les défauts",
+   "Corriger les défauts à l'itération suivante"
+  ],
+  "conseil": null,
+  "skill": null
+ },
+ {
+  "id": "point-relation-partenaire",
+  "titre": "Faire le point sur un partenaire depuis ses mails et son Drive",
+  "service": "commercial",
+  "besoin": "analyse",
+  "faisabilite": "moyen",
+  "portee": "transversal",
+  "structures": [
+   "club",
+   "ligue",
+   "federation"
+  ],
+  "preuve": "demande",
+  "douleur": "Pour savoir où vous en êtes avec un partenaire, vous reconstituez l'historique en fouillant vos mails et vos dossiers partagés.",
+  "gain": "L'IA, reliée à votre messagerie et à votre Drive, vous rend un rapport sur la relation et son avis : vous vérifiez avant d'agir.",
+  "prompt": "Parcours mes mails et les documents du Drive qui concernent [partenaire]. Rédige un rapport sur notre relation : historique des échanges, engagements pris de part et d'autre, points en suspens, prochaines échéances. Termine par ton analyse de la relation en trois points.",
+  "conseil": null,
+  "skill": null
+ },
+ {
+  "id": "simuler-options-calendrier-ligue",
+  "titre": "Simuler des options de calendrier de la ligue dans un petit outil web",
+  "service": "sportif",
+  "besoin": "donnees",
+  "faisabilite": "moyen",
+  "portee": "sport",
+  "structures": [
+   "ligue",
+   "federation"
+  ],
+  "preuve": "teste",
+  "douleur": "Vous préparez les options du calendrier de la saison dans un fichier Excel qui casse dès que vous ajoutez une ligne.",
+  "gain": "L'IA génère un petit module web qui reprend la logique de votre fichier et vous laisse comparer plusieurs options de calendrier ; il vous reste à le tester et à décider avec le service informatique comment le pérenniser.",
+  "prompt": "Voici mon fichier Excel de construction du calendrier [compétition, journées, clubs, contraintes : dates bloquées, réceptions impossibles, diffusion] et la façon dont je m'en sers. Crée une page web simple qui fait la même chose : ajout de lignes sans casse, saisie de plusieurs options de calendrier côte à côte, contrôle des contraintes, export en tableur. Explique-moi comment l'utiliser et liste ce qui n'a pas pu être repris.",
+  "conseil": "Prévoir dès le départ où l'outil sera hébergé : un outil utile resté sur un poste personnel ne survit pas à son créateur.",
+  "skill": null
+ },
+ {
+  "id": "cours-vers-support-interactif",
+  "titre": "Transformer un module de formation en support web interactif",
+  "service": "formation",
+  "besoin": "visuels",
+  "faisabilite": "moyen",
+  "portee": "transversal",
+  "structures": [
+   "federation",
+   "ligue",
+   "comite"
+  ],
+  "preuve": "teste",
+  "douleur": "Vos modules de formation pour éducateurs, arbitres ou bénévoles reposent sur des diaporamas classiques.",
+  "gain": "L'IA transforme le contenu de votre cours en support web interactif, avec des questions-réponses cliquables ; il vous reste à vérifier le contenu et à le tester avant la session.",
+  "prompt": "Voici le contenu de mon module de formation pour [public : éducateurs, arbitres, dirigeants bénévoles] sur [thème]. Transforme-le en une page web interactive : une section par partie du cours, des questions-réponses cliquables à la fin de chaque partie, une synthèse finale. Garde le contenu fourni sans rien ajouter.",
+  "conseil": "Relire le support sur le fond avant la session : la valeur ajoutée reste votre analyse critique de ce que l'IA produit.",
+  "skill": null
+ },
+ {
+  "id": "assistant-personnel-joueurs",
+  "titre": "Créer un assistant personnel pour les joueurs à partir de leurs données",
+  "service": "sportif",
+  "besoin": "assistants",
+  "faisabilite": "complexe",
+  "portee": "sport",
+  "structures": [
+   "federation",
+   "club"
+  ],
+  "preuve": "demande",
+  "douleur": "Vous voulez que vos joueurs s'appuient sur leurs données physiques, mentales, nutritionnelles et de charge pour mieux comprendre leur corps et optimiser leurs performances.",
+  "gain": "Chaque joueur interroge un assistant alimenté par ses propres données pour comprendre son fonctionnement et optimiser sa performance ; le staff garde la main sur les données versées et les recommandations.",
+  "prompt": "Un assistant conversationnel accessible aux joueurs est alimenté par leurs données physiques, mentales, nutritionnelles et de charge d'entraînement. Il répond à leurs questions sur leur état et leurs leviers de performance. Projet sur mesure, à cadrer avec le staff et un prestataire.",
+  "process": [
+   "Cadrer les besoins avec le staff et les joueurs",
+   "Recenser les données physiques, mentales, nutritionnelles et de charge disponibles",
+   "Choisir un hébergement adapté à des données de santé",
+   "Construire l'assistant alimenté par ces données",
+   "Mettre l'assistant à disposition des joueurs"
+  ],
+  "conseil": "Des données de santé peuvent demander des choix d'hébergement différents de ceux d'un simple assistant de réponse aux mails : à cadrer dès le départ.",
   "skill": null
  }
 ];
