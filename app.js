@@ -42,7 +42,6 @@ window.CARTE_ANALYTICS_URL = window.CARTE_ANALYTICS_URL || null;
     axe: new Set(), // valeurs sélectionnées sur l'axe courant
     faisabilite: new Set(),
     structures: new Set(),
-    portee: new Set(),
     panier: new Set(),
   };
 
@@ -126,7 +125,6 @@ window.CARTE_ANALYTICS_URL = window.CARTE_ANALYTICS_URL || null;
 
   function passeFiltresFins(c) {
     if (state.faisabilite.size && !state.faisabilite.has(c.faisabilite)) return false;
-    if (state.portee.size && !state.portee.has(c.portee)) return false;
     if (state.structures.size && !c.structures.some((s) => state.structures.has(s))) return false;
     return true;
   }
@@ -187,13 +185,12 @@ window.CARTE_ANALYTICS_URL = window.CARTE_ANALYTICS_URL || null;
   }
 
   /* ============================================================
-     Rendu — Chips fins (faisabilité / structures / portée)
+     Rendu — Chips fins (faisabilité / structures)
      ============================================================ */
   function rendreChipsFins() {
     const map = [
       ["faisabilite", "[data-chips-faisabilite]", "faisabilite"],
       ["structures", "[data-chips-structures]", "structures"],
-      ["portee", "[data-chips-portee]", "portee"],
     ];
     map.forEach(([groupe, sel, stKey]) => {
       const cont = $(sel);
@@ -219,7 +216,7 @@ window.CARTE_ANALYTICS_URL = window.CARTE_ANALYTICS_URL || null;
     nb.innerHTML = `<strong>${liste.length}</strong> cas ${liste.length > 1 ? "correspondent" : "correspond"} à votre recherche`;
 
     const reset = $("[data-reset]");
-    const filtresActifs = state.axe.size || state.faisabilite.size || state.structures.size || state.portee.size;
+    const filtresActifs = state.axe.size || state.faisabilite.size || state.structures.size;
     reset.hidden = !filtresActifs;
 
     if (!liste.length) {
@@ -375,7 +372,6 @@ window.CARTE_ANALYTICS_URL = window.CARTE_ANALYTICS_URL || null;
       <div class="fiche-tags">
         <span class="tag tag-faisabilite tag-${c.faisabilite}">${label("faisabilite", c.faisabilite)}</span>
         <span class="tag">${label("besoins", c.besoin)}</span>
-        <span class="tag">${label("portee", c.portee)}</span>
       </div>
       <div class="fiche-bloc">
         <p class="fiche-bloc-titre">Avant l'IA</p>
@@ -513,7 +509,7 @@ window.CARTE_ANALYTICS_URL = window.CARTE_ANALYTICS_URL || null;
 
     // Reset
     const resetTout = () => {
-      state.axe.clear(); state.faisabilite.clear(); state.structures.clear(); state.portee.clear();
+      state.axe.clear(); state.faisabilite.clear(); state.structures.clear();
       rendreChipsAxe(); rendreChipsFins(); rendreGrille();
     };
     $("[data-reset]").addEventListener("click", resetTout);
