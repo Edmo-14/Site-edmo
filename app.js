@@ -23,6 +23,9 @@ window.CARTE_ANALYTICS_URL = window.CARTE_ANALYTICS_URL || null;
     const t = g.find((x) => x[0] === cle);
     return t ? t[1] : cle;
   };
+  /* Faisabilité : libellé sans l'émoji des données, précédé d'un point dessiné */
+  const texteEffort = (cle) => label("faisabilite", cle).replace(/^[^\p{L}]+/u, "");
+  const effort = (cle) => `<span class="point-effort effort-${cle}" aria-hidden="true"></span>${texteEffort(cle)}`;
 
   /* Ordres de tri de la feuille de route (spec avenant §H) */
   const ORDRE_SERVICES = new Map((TAX.services || []).map(([cle], i) => [cle, i]));
@@ -197,7 +200,8 @@ window.CARTE_ANALYTICS_URL = window.CARTE_ANALYTICS_URL || null;
       cont.innerHTML = (TAX[groupe] || [])
         .map(([cle, lib]) => {
           const actif = state[stKey].has(cle);
-          return `<button type="button" class="chip-s" data-fin="${stKey}" data-val="${cle}" aria-pressed="${actif}">${lib}</button>`;
+          const texte = groupe === "faisabilite" ? effort(cle) : lib;
+          return `<button type="button" class="chip-s" data-fin="${stKey}" data-val="${cle}" aria-pressed="${actif}">${texte}</button>`;
         })
         .join("");
     });
@@ -238,7 +242,7 @@ window.CARTE_ANALYTICS_URL = window.CARTE_ANALYTICS_URL || null;
           <h3 class="carte-titre">${c.titre}</h3>
           <p class="carte-douleur">${c.douleur}</p>
           <div class="carte-pied">
-            <span class="tag tag-faisabilite tag-${c.faisabilite}">${label("faisabilite", c.faisabilite)}</span>
+            <span class="tag tag-faisabilite tag-${c.faisabilite}">${effort(c.faisabilite)}</span>
           </div>
         </article>`;
       })
@@ -269,7 +273,7 @@ window.CARTE_ANALYTICS_URL = window.CARTE_ANALYTICS_URL || null;
         <span class="fr-item-point" style="background:var(--c-${c.service}, var(--encre))"></span>
         <span class="fr-item-texte">
           <span class="fr-item-titre">${c.titre}</span>
-          <span class="fr-item-meta">${label("services", c.service)} · ${label("faisabilite", c.faisabilite)}</span>
+          <span class="fr-item-meta">${label("services", c.service)} · ${texteEffort(c.faisabilite)}</span>
         </span>
         <button type="button" class="fr-item-retirer" data-toggle="${c.id}" aria-label="Retirer ${c.titre}">×</button>
       </li>`)
@@ -340,13 +344,13 @@ window.CARTE_ANALYTICS_URL = window.CARTE_ANALYTICS_URL || null;
 
     const type = TYPE_SOLUTION[c.faisabilite];
     const badgeType = type
-      ? `<p class="fiche-niveau"><span class="fiche-niveau-badge">${type.libelle}</span> — ${type.description}</p>`
+      ? `<p class="fiche-niveau"><span class="fiche-niveau-badge">${type.libelle}</span> : ${type.description}</p>`
       : "";
     const estComplexe = c.faisabilite === "complexe";
     const aProcess = estComplexe && Array.isArray(c.process) && c.process.length > 0;
     const notePrompt = estComplexe
       ? ""
-      : `<p class="fiche-prompt-note">Un exemple pour tester le cas et vous roder — adaptez-le à votre contexte. Pour le déployer vraiment dans votre structure, l'étape d'après est d'encapsuler le process : plus rien à réexpliquer à chaque fois.</p>`;
+      : `<p class="fiche-prompt-note">Un exemple pour tester le cas et vous roder : adaptez-le à votre contexte. Pour le déployer vraiment dans votre structure, l'étape d'après est d'encapsuler le process : plus rien à réexpliquer à chaque fois.</p>`;
     /* Cas complexe avec champ process : liste ordonnée d'étapes, sans bouton Copier.
        Sinon : affichage du texte du prompt/dispositif, copiable (repli). */
     const blocProcedure = aProcess
@@ -361,7 +365,7 @@ window.CARTE_ANALYTICS_URL = window.CARTE_ANALYTICS_URL || null;
       ? `<a class="btn btn-contour" href="${c.skill}" target="_blank" rel="noopener">Voir la fiche recette</a>`
       : `<p class="fiche-skill-note">${
           estComplexe
-            ? "Un cas de cette ampleur se construit étape par étape — ajoutez-le à votre feuille de route et parlons-en."
+            ? "Un cas de cette ampleur se construit étape par étape. Ajoutez-le à votre feuille de route et parlons-en."
             : "Tout est là pour l'essayer vous-même : le prompt ci-dessus. Ajoutez ce cas à votre liste pour le garder sous la main."
         }</p>`;
 
@@ -370,7 +374,7 @@ window.CARTE_ANALYTICS_URL = window.CARTE_ANALYTICS_URL || null;
       <span class="fiche-service"><span class="point"></span>${label("services", c.service)}</span>
       <h2 class="fiche-titre" id="fiche-titre">${c.titre}</h2>
       <div class="fiche-tags">
-        <span class="tag tag-faisabilite tag-${c.faisabilite}">${label("faisabilite", c.faisabilite)}</span>
+        <span class="tag tag-faisabilite tag-${c.faisabilite}">${effort(c.faisabilite)}</span>
         <span class="tag">${label("besoins", c.besoin)}</span>
       </div>
       <div class="fiche-bloc">
@@ -447,7 +451,7 @@ window.CARTE_ANALYTICS_URL = window.CARTE_ANALYTICS_URL || null;
       ta.style.opacity = "0";
       document.body.appendChild(ta);
       ta.select();
-      try { document.execCommand("copy"); toast(msg); } catch (_) { toast("Copie impossible — copiez le lien manuellement"); }
+      try { document.execCommand("copy"); toast(msg); } catch (_) { toast("Copie impossible : copiez le lien manuellement"); }
       document.body.removeChild(ta);
     }
   }
@@ -519,7 +523,7 @@ window.CARTE_ANALYTICS_URL = window.CARTE_ANALYTICS_URL || null;
     $("[data-copier-lien]").addEventListener("click", () => {
       if (!state.panier.size) { toast("Sélectionnez au moins un cas avant de partager"); return; }
       majURL();
-      copier(window.location.href, "Lien copié — partagez-le, il rouvrira votre sélection");
+      copier(window.location.href, "Lien copié : partagez-le, il rouvrira votre sélection");
       emettre("copie_lien", null);
     });
 

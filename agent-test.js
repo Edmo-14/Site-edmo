@@ -35,7 +35,13 @@
     '.max-w-64 { font-size: 0.92rem; font-weight: 700; line-height: 1.4; max-width: 15rem; text-wrap: balance; }',
     'p[class*="text-[10px]"] { display: none !important; }',
     'button { font-weight: 800 !important; }',
-    'button:focus-visible { outline: 2px solid #00DF81 !important; outline-offset: 3px !important; }'
+    'button:focus-visible { outline: 2px solid #00DF81 !important; outline-offset: 3px !important; }',
+    // Mobile : le widget se réduit à ses deux boutons pour ne pas masquer les cas
+    '@media (max-width: 820px) {',
+    '  .bg-base > div:first-child:has(.min-w-60) { display: none !important; }',
+    '  .bg-base button { min-width: 44px !important; min-height: 44px !important; justify-content: center !important; }',
+    '  button span.truncate { position: absolute !important; width: 1px !important; height: 1px !important; overflow: hidden !important; clip-path: inset(50%) !important; white-space: nowrap !important; }',
+    '}'
   ].join('\n');
 
   var FENETRE = [

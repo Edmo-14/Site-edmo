@@ -309,7 +309,14 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 0.74rem; font-weight: 600; padding: 4px 10px; border-radius: var(--pilule);
   border: 1.5px solid rgba(2, 27, 20, 0.2); color: var(--encre-doux);
 }
-.tag-faisabilite { color: var(--encre); }
+.tag-faisabilite { color: var(--encre); display: inline-flex; align-items: center; gap: 6px; }
+/* Faisabilité : point dessiné, code feu tricolore repris des anciennes pastilles */
+.point-effort { width: 9px; height: 9px; border-radius: 50%; flex: none; display: inline-block; }
+.effort-facile { background: #00B86B; }
+.effort-moyen { background: #F29D38; }
+.effort-complexe { background: #E5484D; }
+.chip-s { display: inline-flex; align-items: center; gap: 7px; }
+.chip-s[aria-pressed="true"] .point-effort { box-shadow: 0 0 0 1.5px #F1F7F6; }
 .tag-facile { background: rgba(0, 223, 129, 0.28); border-color: transparent; }
 .tag-moyen { background: rgba(44, 194, 149, 0.28); border-color: transparent; }
 .tag-complexe { background: rgba(3, 98, 76, 0.22); border-color: transparent; }
@@ -516,6 +523,10 @@ button { font-family: inherit; cursor: pointer; }
   .header-feuille { display: none; }
   .header-retour { display: none; }
   .fab { display: inline-flex; }
+  /* Mobile : la feuille de route à gauche, l'agent de test réduit à droite, sur une même ligne */
+  .fab { left: 16px; right: auto; bottom: 32px; }
+  /* Cibles tactiles d'au moins 44 px */
+  .entree, .chip, .chip-s { min-height: 44px; }
   .feuille { scroll-margin-top: 20px; }
 }
 @media (max-width: 520px) {
