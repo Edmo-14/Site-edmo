@@ -1,5 +1,5 @@
 // Données de la Carte IA du Sport — généré, ne pas éditer à la main.
-// Source : librairie-skills-sport (cas observés lors de formations ou de déploiements, anonymisés).
+// Source : MaestrIA (cas observés lors de formations ou de déploiements, anonymisés).
 window.TAXONOMIE = {
  "services": [
   [

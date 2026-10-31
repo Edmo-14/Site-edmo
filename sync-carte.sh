@@ -2,16 +2,19 @@
 # ============================================================
 # Synchronise la Carte IA du Sport vers le site Edmo.
 #
-# Source  : librairie-skills-sport/carte-ia-sport/  (référence)
-# Cible   : maestria-landing/                       (ce dossier)
+# Source  : MaestrIA/1 Projets/carte-ia-sport/  (référence, dépôt partagé)
+# Cible   : edmo-site/                          (ce dossier)
 #
-# Fichiers synchronisés :
+# Fichier synchronisé :
 #   - data/cas.js  (les fiches de cas, générées côté source)
-#   - app.js       (la logique applicative, copiée telle quelle)
 #
 # Jamais synchronisés (spécifiques Edmo) :
+#   - app.js                (a divergé : points de faisabilité, libellés Edmo)
 #   - feuille-de-route.html (structure + funnel Edmo)
 #   - carte.css             (charte EDMO)
+#
+# Après une synchro, relever le ?v= de data/cas.js dans
+# feuille-de-route.html pour contourner le cache des visiteurs.
 #
 # Usage : ./sync-carte.sh          → synchronise
 #         ./sync-carte.sh --check  → montre les écarts sans rien copier
@@ -20,7 +23,7 @@
 set -euo pipefail
 
 CIBLE="$(cd "$(dirname "$0")" && pwd)"
-SOURCE="$CIBLE/../librairie-skills-sport/carte-ia-sport"
+SOURCE="$CIBLE/../MaestrIA/1 Projets/carte-ia-sport"
 
 if [ ! -d "$SOURCE" ]; then
   echo "❌ Source introuvable : $SOURCE" >&2
@@ -44,7 +47,6 @@ echo "Source : $SOURCE"
 echo "Cible  : $CIBLE"
 echo ""
 compare "data/cas.js"
-compare "app.js"
 echo ""
 
 if [ "$MODE" = "--check" ]; then
@@ -59,8 +61,7 @@ fi
 
 mkdir -p "$CIBLE/data"
 cp "$SOURCE/data/cas.js" "$CIBLE/data/cas.js"
-cp "$SOURCE/app.js" "$CIBLE/app.js"
 
 NB_CAS=$(grep -c '"id"' "$CIBLE/data/cas.js" || true)
 echo "✅ Synchronisé : $NB_CAS cas dans data/cas.js."
-echo "→ Pense à recharger feuille-de-route.html dans le navigateur pour vérifier."
+echo "→ Relève le ?v= de data/cas.js dans feuille-de-route.html, puis recharge la page pour vérifier."

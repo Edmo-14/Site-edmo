@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-14T14:00:00+02:00",
+  "title": "Design System: Edmo",
+  "extensions": {
+    "colorMeta": {
+      "rich-black": { "role": "neutral", "displayName": "Rich Black", "canonical": "#021B14", "tonalRamp": ["#021B14", "#06302B", "#0B453D", "#115A4F", "#1B7A6A", "#4AA491", "#93CCC0", "#D6ECE7"] },
+      "vert-nuit": { "role": "neutral", "displayName": "Vert nuit", "canonical": "#032221", "tonalRamp": ["#032221", "#07332F", "#0D4740", "#155C52", "#227A6C", "#52A493", "#9BCEC3", "#DAEEE9"] },
+      "vert-bangladesh": { "role": "secondary", "displayName": "Vert Bangladesh", "canonical": "#03624C", "tonalRamp": ["#02241C", "#03392D", "#034E3D", "#03624C", "#12805F", "#3AA37F", "#7FC7AB", "#CBEADD"] },
+      "vert-meadow": { "role": "primary", "displayName": "Vert Meadow", "canonical": "#2CC295", "tonalRamp": ["#0A3A2C", "#12563F", "#1A7A58", "#22A077", "#2CC295", "#5FD3AF", "#9AE4CB", "#D4F4E9"] },
+      "vert-caribbean": { "role": "primary", "displayName": "Vert Caribbean", "canonical": "#00DF81", "tonalRamp": ["#003D24", "#005A35", "#008A50", "#00B468", "#00DF81", "#42EAA2", "#8CF3C6", "#CFFAE7"] },
+      "blanc-anti-flash": { "role": "neutral", "displayName": "Anti-Flash White", "canonical": "#F1F7F6", "tonalRamp": ["#20302C", "#3C534D", "#5F7A72", "#88A29A", "#B2C7C1", "#D2E0DC", "#E4EEEB", "#F1F7F6"] },
+      "fond-teinte": { "role": "neutral", "displayName": "Fond teinté", "canonical": "#E2EDE9", "tonalRamp": ["#1D2B27", "#37504A", "#587670", "#7F9C95", "#A8C1BA", "#C7DAD4", "#D9E7E2", "#E2EDE9"] },
+      "encre-claire": { "role": "neutral", "displayName": "Encre claire", "canonical": "#294D42", "tonalRamp": ["#0F1F1A", "#1B342C", "#294D42", "#3A6B5C", "#528C79", "#7DAD9D", "#AECDC2", "#DCEBE5"] },
+      "pine": { "role": "neutral", "displayName": "Pine", "canonical": "#06302B", "tonalRamp": ["#06302B", "#0A453E", "#105A51", "#1A7568", "#2E9484", "#5CB4A5", "#98D2C8", "#D5EDE8"] },
+      "frog": { "role": "secondary", "displayName": "Frog", "canonical": "#17876D", "tonalRamp": ["#062E25", "#0B4536", "#115F4B", "#17876D", "#2BA487", "#5CBFA6", "#98D9C8", "#D4F0E7"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero uniquement, avec un em en vert Meadow sur le mot pivot." },
+      "headline": { "displayName": "Headline", "purpose": "Titres de section, max-width 22-24ch, text-wrap: balance." },
+      "title": { "displayName": "Title", "purpose": "Titres de cartes, noms des membres, items de méthode." },
+      "body": { "displayName": "Body", "purpose": "Texte courant 52-58ch ; blanc 0.78-0.85 sur fond sombre." },
+      "label": { "displayName": "Label", "purpose": "Labels de formulaire (vert Meadow) et mentions." }
+    },
+    "shadows": [
+      { "name": "trait-pose", "value": "0 2px 0 rgba(2, 27, 20, 0.08)", "purpose": "Assise discrète des fiches Carte IA au repos." },
+      { "name": "relief-survol", "value": "0 10px 24px rgba(2, 27, 20, 0.16)", "purpose": "Réponse au hover, toujours couplée à translateY(-2px)." }
+    ],
+    "motion": [
+      { "name": "lever", "value": "0.8s cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Entrée du hero (opacité + translateY 18px), décalée par 0.12s." },
+      { "name": "etat", "value": "0.15s ease", "purpose": "Transitions d'état (fond, transform) des boutons et chips." },
+      { "name": "fondu-scroll", "value": "animation-timeline: view(), entry 0% → 55%", "purpose": "Révélation .revele au défilement (opacité 0.25 → 1), sous @supports + prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "mobile-nav", "value": "720px" },
+      { "name": "grilles", "value": "820px" },
+      { "name": "equipe-empilee", "value": "560px" }
+    ],
+    "carteIaServiceColors": {
+      "direction": "#00DF81", "commercial": "#FF7A45", "marcom": "#EC4899", "billetterie": "#F5B301",
+      "evenementiel": "#0EA5E9", "sportif": "#EF4444", "juridique": "#6366F1", "finance": "#0D9488",
+      "rh": "#D946EF", "formation": "#A3E635"
+    }
+  },
+  "components": [
+    {
+      "name": "Bouton primaire",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Le CTA plein : pilule vert Caribbean, texte noir gras, lift au survol.",
+      "html": "<button class=\"ds-btn-primary\">Demander de l'information</button>",
+      "css": ".ds-btn-primary { background: #00DF81; color: #021B14; font-family: Manrope, system-ui, sans-serif; font-weight: 800; font-size: 0.98rem; padding: 15px 32px; border: none; border-radius: 999px; cursor: pointer; transition: background 0.25s, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-primary:hover { background: #2CC295; transform: translateY(-2px); } .ds-btn-primary:focus-visible { outline: 2px solid #00DF81; outline-offset: 3px; }"
+    },
+    {
+      "name": "Bouton contour clair",
+      "kind": "button",
+      "refersTo": "button-contour-clair",
+      "description": "Action secondaire sur fond sombre : contour blanc qui s'inverse en vert au survol.",
+      "html": "<div class=\"ds-fond-sombre\"><button class=\"ds-btn-contour-clair\">Demander un échange</button></div>",
+      "css": ".ds-fond-sombre { background: #032221; padding: 24px; border-radius: 12px; display: inline-block; } .ds-btn-contour-clair { background: transparent; color: #F1F7F6; border: 1.5px solid #F1F7F6; font-family: Manrope, system-ui, sans-serif; font-weight: 800; font-size: 0.95rem; padding: 14px 28px; border-radius: 999px; cursor: pointer; transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease; } .ds-btn-contour-clair:hover { background: #00DF81; color: #021B14; border-color: #00DF81; }"
+    },
+    {
+      "name": "Lien-flèche",
+      "kind": "custom",
+      "refersTo": "button-primary",
+      "description": "L'action secondaire de la landing : texte gras souligné d'un trait vert 2px.",
+      "html": "<div class=\"ds-fond-noir\"><a class=\"ds-lien-fleche\" href=\"#\">Découvrir la méthode</a></div>",
+      "css": ".ds-fond-noir { background: #021B14; padding: 24px; border-radius: 12px; display: inline-block; } .ds-lien-fleche { color: #F1F7F6; text-decoration: none; font-family: Manrope, system-ui, sans-serif; font-weight: 700; font-size: 0.98rem; border-bottom: 2px solid #00DF81; padding-bottom: 3px; transition: color 0.2s; } .ds-lien-fleche:hover { color: #00DF81; }"
+    },
+    {
+      "name": "Chip de filtre (Carte IA)",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Filtre pilule avec point de couleur métier ; l'état actif inverse fond et texte.",
+      "html": "<span><button class=\"ds-chip\"><span class=\"ds-chip-point\"></span>Billetterie <span class=\"ds-chip-nb\">24</span></button> <button class=\"ds-chip ds-chip-active\"><span class=\"ds-chip-point ds-point-dir\"></span>Direction <span class=\"ds-chip-nb\">31</span></button></span>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 7px; background: #F1F7F6; color: #021B14; border: 1.5px solid rgba(2, 27, 20, 0.16); font-family: Manrope, system-ui, sans-serif; font-weight: 600; font-size: 0.9rem; padding: 8px 15px; border-radius: 999px; cursor: pointer; transition: all 0.13s ease; } .ds-chip:hover { border-color: #021B14; transform: translateY(-1px); } .ds-chip-active { background: #021B14; color: #F1F7F6; border-color: #021B14; } .ds-chip-point { width: 10px; height: 10px; border-radius: 50%; background: #F5B301; flex: none; } .ds-point-dir { background: #00DF81; } .ds-chip-nb { font-size: 0.78rem; opacity: 0.6; font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Panneau sombre",
+      "kind": "card",
+      "refersTo": "panneau-sombre",
+      "description": "Le conteneur signature : panneau Rich Black arrondi 16px posé sur section claire (prix, carte IA).",
+      "html": "<div class=\"ds-panneau\"><p class=\"ds-panneau-mention\">Déploiement complet</p><p class=\"ds-panneau-montant\"><small>à partir de</small><em>10 000 €</em></p></div>",
+      "css": ".ds-panneau { background: #021B14; color: #F1F7F6; border-radius: 16px; padding: 40px; font-family: Manrope, system-ui, sans-serif; max-width: 340px; } .ds-panneau-mention { font-weight: 800; font-size: 0.92rem; color: #2CC295; margin: 0 0 14px; } .ds-panneau-montant { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.25; margin: 0; } .ds-panneau-montant small { display: block; font-size: 1.05rem; font-weight: 600; color: rgba(241, 247, 246, 0.75); margin-bottom: 4px; } .ds-panneau-montant em { font-style: normal; color: #00DF81; }"
+    },
+    {
+      "name": "Champ de formulaire",
+      "kind": "input",
+      "refersTo": "panneau-sombre",
+      "description": "Pas de boîte : label vert Meadow + bordure basse qui passe au vert Caribbean au focus.",
+      "html": "<div class=\"ds-champ-fond\"><label class=\"ds-label\" for=\"ds-email\">Votre email</label><input class=\"ds-input\" id=\"ds-email\" type=\"email\" placeholder=\"vous@organisation.fr\"></div>",
+      "css": ".ds-champ-fond { background: #021B14; padding: 24px; border-radius: 12px; max-width: 320px; } .ds-label { display: block; font-family: Manrope, system-ui, sans-serif; font-weight: 800; font-size: 0.88rem; color: #2CC295; margin-bottom: 8px; } .ds-input { width: 100%; background: transparent; border: none; border-bottom: 2px solid rgba(241, 247, 246, 0.16); color: #F1F7F6; font-family: Manrope, system-ui, sans-serif; font-size: 1.05rem; font-weight: 500; padding: 10px 2px; transition: border-color 0.25s; } .ds-input:focus { outline: none; border-bottom-color: #00DF81; } .ds-input::placeholder { color: rgba(241, 247, 246, 0.62); }"
+    },
+    {
+      "name": "Médaillon portrait",
+      "kind": "custom",
+      "refersTo": "button-primary",
+      "description": "Portrait rond cerclé de vert Caribbean avec respiration blanche — la signature humaine du site.",
+      "html": "<span class=\"ds-medaillon\" role=\"img\" aria-label=\"Portrait\"></span>",
+      "css": ".ds-medaillon { display: inline-block; width: 140px; height: 140px; border-radius: 50%; border: 3px solid #00DF81; padding: 5px; background: #F1F7F6 radial-gradient(circle at 50% 38%, #7F9C95 22%, #37504A 60%) content-box; background-size: cover; }"
+    },
+    {
+      "name": "Badge ×",
+      "kind": "custom",
+      "refersTo": "button-primary",
+      "description": "Connecteur rond vert Caribbean au × noir, entre les deux piliers de la section équipe.",
+      "html": "<span class=\"ds-badge-x\" aria-hidden=\"true\">×</span>",
+      "css": ".ds-badge-x { display: inline-grid; place-items: center; width: 60px; height: 60px; border-radius: 50%; background: #00DF81; color: #021B14; font-family: Manrope, system-ui, sans-serif; font-size: 1.7rem; font-weight: 800; line-height: 1; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Le stade de nuit",
+    "overview": "Edmo, c'est une pelouse éclairée dans l'obscurité. Les fonds sont profonds (Rich Black, vert nuit), le contenu est précis et cadré, et le vert Caribbean joue le rôle des projecteurs : il ne couvre jamais la surface, il désigne ce qui compte. Le site alterne des nappes sombres et des nappes claires comme un stade alterne tribunes dans l'ombre et terrain en pleine lumière ; c'est cette alternance, et non des ombres portées, qui crée la profondeur. Le système est franc et direct : une seule famille typographique (Manrope) menée à la graisse, des pilules pleines pour les actions, des formes géométriques simples.",
+    "keyCharacteristics": [
+      "Alternance de nappes sombres/claires comme structure de page",
+      "Un seul accent (vert Caribbean #00DF81), rare et toujours actionnable ou signifiant",
+      "Manrope seule, du 400 au 800 : la hiérarchie est une affaire de graisse, pas de famille",
+      "Pilules pour les actions, cercles pour les personnes et badges, carrés 14px comme repères",
+      "Surfaces plates ; le relief est réservé au survol"
+    ],
+    "rules": [
+      { "name": "La règle des projecteurs", "body": "Le vert Caribbean occupe moins de 10 % d'un écran. Il désigne une action ou une emphase ; il ne sert jamais de fond de lecture ni de couleur décorative. Si un écran contient deux CTA pleins visibles en même temps, il y en a un de trop.", "section": "colors" },
+      { "name": "La règle Ed/mo", "body": "Le wordmark s'écrit toujours Ed dans la couleur d'encre du fond et mo en vert Caribbean. Aucune autre découpe, aucune autre couleur.", "section": "colors" },
+      { "name": "La règle de la famille unique", "body": "Manrope est la seule famille du système. Interdiction d'introduire une seconde famille : toute nuance passe par la graisse et la taille.", "section": "typography" },
+      { "name": "La règle du plat", "body": "Une surface au repos n'a pas d'ombre. Si un élément semble manquer de présence, on change son fond ou sa graisse, pas son ombre.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do alterner les nappes de fond pour rythmer la page : clair → sombre → clair, avec le bandeau vert Caribbean comme respiration unique.",
+      "Do réserver le vert Caribbean (#00DF81) aux actions et aux emphases ; l'état hover est toujours le vert Meadow (#2CC295).",
+      "Do écrire le wordmark Ed (encre du fond) + mo (vert Caribbean), partout, y compris le favicon.",
+      "Do utiliser l'encre claire (#294D42) pour le texte secondaire sur fond clair, et le blanc en transparence (0.78-0.88) sur fond sombre.",
+      "Do plafonner les largeurs de lecture en ch (52-58ch corps, 22-24ch titres) et garder text-wrap: balance sur les titres.",
+      "Do coupler tout relief de survol à translateY(-2px) et à l'ombre 0 10px 24px rgba(2,27,20,0.16) — jamais l'un sans l'autre."
+    ],
+    "donts": [
+      "Don't utiliser une bordure latérale colorée (border-left > 1px) comme accent — le motif du système est le carré repère 14px ou le badge rond.",
+      "Don't introduire une seconde famille de police, un dégradé de texte ou du glassmorphism.",
+      "Don't poser des ombres sur des surfaces au repos, ni empiler des cartes identiques en grille icône + titre + texte.",
+      "Don't utiliser de gris neutre pour du texte : toute couleur de texte appartient à la rampe verte de la charte.",
+      "Don't écrire « MaestrIA » où que ce soit sur le site : la marque publique est Edmo.",
+      "Don't mettre deux CTA pleins vert Caribbean dans le même viewport."
+    ]
+  }
+}
